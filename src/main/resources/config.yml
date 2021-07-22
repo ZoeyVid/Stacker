@@ -1,0 +1,20 @@
+# Stacker
+# A Plugin to Stack Player on the top of a other Player
+# by David__Craft
+# Twitter: https://twitter.com/David__Craft
+# Discord: https://discord.gg/y8DhYhv427
+#
+# Should the stackmode enabeld default on join?
+defaultOn: false
+#
+# Should show a message when a player a not stackable?
+showMessage: true
+#
+# Should a message be sent to the player when stickmode or immune mode is activated or deactivated for him by someone else?
+sendMessage: true
+#
+# Should save the last state of player until the next Server restart?
+saveState: true
+#
+# Should a Player on join default immun?
+defaultImmune: false

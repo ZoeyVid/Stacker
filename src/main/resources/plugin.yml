@@ -1,0 +1,35 @@
+name: Stacker
+version: ${project.version}
+main: de.davidcraft.stacker.main
+authors: [ DavidCraft ]
+description: A Plugin to Stack Player on the top of a other Player
+
+commands:
+  stacker:
+    aliases: str
+    description: A Command to enable and disable the Stackermode!
+
+  permissions:
+    stacker.*:
+      description: Gives access to all Stacker functions
+      children:
+        stacker.help: true
+        stacker.use.self: true
+        stacker.use.other: true
+        stacker.immune.self: true
+        stacker.immune.other: true
+    stacker.help:
+      description: Allows to use /stacker help
+      default: true
+    stacker.use.self:
+      description: Allows to enable Stackmode for your seld
+      default: op
+    stacker.use.other:
+      description: Allows to enable Stackmode for another Player
+      default: op
+    stacker.immune.self:
+      description: Allows to make his self Immune
+      default: op
+    stacker.immune.other:
+      description: Allows you make other Players Immune
+      default: op

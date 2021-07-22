@@ -6,10 +6,10 @@ This plugin works with the Minecraft versions 1.11-1.17.1
 # Commands
 
 /stacker - Toggle stackermode <br/>
-/stacker toggle/enable/disable - Also toggle stackermode
-/stacker toggle/enable/disable <player> - Toggle stackmode for a other player
-/stakcer immune - Enable or disable the immune mode for you self
-/stakcer immune <player> - Enable or disable the immune mode for a other player
+/stacker toggle/enable/disable - Also toggle stackermode <br/>
+/stacker toggle/enable/disable <player> - Toggle stackmode for a other player <br/>
+/stacker immune - Enable or disable the immune mode for you self <br/>
+/stacker immune <player> - Enable or disable the immune mode for a other player <br/>
 /stacker help - View a help menu
 
 # Permissions

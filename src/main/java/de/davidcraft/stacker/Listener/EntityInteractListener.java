@@ -1,6 +1,6 @@
 package de.davidcraft.stacker.Listener;
 
-import de.davidcraft.stacker.LoadConfig;
+import de.davidcraft.stacker.loadConfig;
 import de.davidcraft.stacker.main;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -16,7 +16,7 @@ public class EntityInteractListener implements Listener {
         if (event.getRightClicked() instanceof Player && main.getStackmode().contains(player)) {
             Player target = (Player) event.getRightClicked();
             if (main.getDisabled().contains(target)) {
-                if (LoadConfig.showMessage()) {
+                if (loadConfig.showMessage()) {
                     player.sendMessage(main.getPrefix() + ChatColor.WHITE + "The Player " + target.getName() + " can`t be stacked!");
                 }
             } else {

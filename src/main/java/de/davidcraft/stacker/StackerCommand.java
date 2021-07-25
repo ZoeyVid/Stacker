@@ -80,13 +80,13 @@ public class StackerCommand implements CommandExecutor, TabCompleter{
                         if (main.getStackmode().contains(target)) {
                             main.getStackmode().remove(target);
                             player.sendMessage(main.getPrefix() + ChatColor.WHITE + target.getName() + " is not longer in the stackmode!");
-                            if (LoadConfig.sendMessage()) {
+                            if (loadConfig.sendMessage()) {
                                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + "The stackmode was disabled for you from " + player.getName());
                             }
                         } else {
                             main.getStackmode().add(target);
                             player.sendMessage(main.getPrefix() + ChatColor.WHITE + target.getName() + " is now in the stackmode!");
-                            if (LoadConfig.sendMessage()) {
+                            if (loadConfig.sendMessage()) {
                                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + "The stackmode was enabled for you from " + player.getName());
                             }
                         }
@@ -104,13 +104,13 @@ public class StackerCommand implements CommandExecutor, TabCompleter{
                         if (main.getDisabled().contains(target)) {
                             main.getDisabled().remove(target);
                             player.sendMessage(main.getPrefix() + ChatColor.WHITE + target.getName() + " is not longer immune!");
-                            if (LoadConfig.sendMessage()) {
+                            if (loadConfig.sendMessage()) {
                                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + "The immune mode was disabled for you from " + player.getName());
                             }
                         } else {
                             main.getDisabled().add(target);
                             player.sendMessage(main.getPrefix() + ChatColor.WHITE + target.getName() + " is now immune!");
-                            if (LoadConfig.sendMessage()) {
+                            if (loadConfig.sendMessage()) {
                                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + "The immune mode was enabled for you from " + player.getName());
                             }
                         }

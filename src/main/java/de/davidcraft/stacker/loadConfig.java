@@ -5,7 +5,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 
-public class LoadConfig {
+public class loadConfig {
     private static final File config = new File("plugins/Stacker", "config.yml");
     private static FileConfiguration cfg;
 

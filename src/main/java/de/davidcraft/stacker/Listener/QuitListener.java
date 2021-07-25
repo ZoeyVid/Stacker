@@ -1,6 +1,6 @@
 package de.davidcraft.stacker.Listener;
 
-import de.davidcraft.stacker.LoadConfig;
+import de.davidcraft.stacker.loadConfig;
 import de.davidcraft.stacker.main;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,7 +12,7 @@ public class QuitListener implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        if (!LoadConfig.saveState()) {
+        if (!loadConfig.saveState()) {
             main.getDisabled().remove(player);
             main.getStackmode().remove(player);
         }

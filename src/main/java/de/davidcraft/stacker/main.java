@@ -45,7 +45,7 @@ public final class main extends JavaPlugin {
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.DARK_GREEN + "The Plugin was enabled!");
         loadConfig();
-        LoadConfig.ReadConfig();
+        loadConfig.ReadConfig();
         commandRegistration();
         listenerRegistration();
     }

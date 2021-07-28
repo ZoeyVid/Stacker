@@ -3,22 +3,15 @@
 A plugin to stack player above player! <br/>
 This plugin works with the Minecraft versions 1.11-1.17.1
 
-# Commands
+# Commands & Permissions
 
-/stacker - Toggle stackermode <br/>
-/stacker toggle/enable/disable - Also toggle stackermode <br/>
-/stacker toggle/enable/disable <player> - Toggle stackmode for a other player <br/>
-/stacker immune - Enable or disable the immune mode for you self <br/>
-/stacker immune <player> - Enable or disable the immune mode for a other player <br/>
-/stacker help - View a help menu
-
-# Permissions
-
-stacker.use.self <br/>
-stacker.use.other <br/>
-stacker.immune.other <br/>
-stacker.immune.self <br/>
-stacker.help
+**Command - Descripton - Needed Permission** <br/>
+/stacker - Toggle stackermode - stacker.use.self <br/>
+/stacker toggle/enable/disable - Also toggle stackermode - stacker.use.self <br/>
+/stacker toggle/enable/disable <player> - Toggle stackmode for a other player - stacker.use.other <br/>
+/stacker immune - Enable or disable the immune mode for you self - stacker.immune.self <br/>
+/stacker immune <player> - Enable or disable the immune mode for a other player - stacker.immune.other <br/>
+/stacker help - View a help menu- stacker.help
 
 # A bug or feature?
 

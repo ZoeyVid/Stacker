@@ -21,12 +21,12 @@ Bugs and feature ideas can be submitted in the issues!
  
 GitHub: https://github.com/DavidCraftDev/Stacker/ <br/>
 SpigotMC: https://www.spigotmc.org/resources/stacker.94586/ <br/>
-Curseforge: https://dev.bukkit.org/projects/playerstackerplugin <br/>
+Curseforge: https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplugin <br/>
 (dev.bukkit.org): https://dev.bukkit.org/projects/playerstackerplugin <br/>
  
 # Contact me
 
-Discord: https://discord.gg/y8DhYhv427 (German) (DavidCraft#2905) <br/>
+Discord: https://discord.gg/y8DhYhv427 (German/English) (DavidCraft#2905) <br/>
 Twitter: https://twitter.com/David__Craft <br/>
 GitHub: https://github.com/DavidCraftDev/
 

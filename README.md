@@ -3,7 +3,7 @@
 A plugin to stack player above player! <br/>
 This plugin works with the Minecraft versions 1.11-1.17.1
 
-# Commands & Permissions
+## Commands & Permissions
 
 **Command - Descripton - Needed Permission** <br/>
 /stacker - Toggle stackermode - stacker.use.self <br/>
@@ -13,23 +13,23 @@ This plugin works with the Minecraft versions 1.11-1.17.1
 /stacker immune <player> - Enable or disable the immune mode for a other player - stacker.immune.other <br/>
 /stacker help - View a help menu- stacker.help
 
-# A bug or feature?
+## A bug or feature?
 
 Bugs and feature ideas can be submitted in the issues!
 
-# The project is also on: 
+## The project is also on: 
  
 GitHub: https://github.com/DavidCraftDev/Stacker/ <br/>
 SpigotMC: https://www.spigotmc.org/resources/stacker.94586/ <br/>
 Curseforge: https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplugin <br/>
 (dev.bukkit.org): https://dev.bukkit.org/projects/playerstackerplugin <br/>
  
-# Contact me
+## Contact me
 
 Discord: https://discord.gg/y8DhYhv427 (Main Language: German) (DavidCraft#2905) <br/>
 Twitter: https://twitter.com/David__Craft <br/>
 GitHub: https://github.com/DavidCraftDev/
 
-# License 
+## License 
   
 MIT License Copyright (c) 2021 DavidCraft

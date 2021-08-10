@@ -25,4 +25,6 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.4
-      path: target/stacker-1.0-SNAPSHOT.jar
+      with:
+       name: stacker-1.0-SNAPSHOT.jar
+       path: target/*

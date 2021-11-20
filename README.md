@@ -27,9 +27,9 @@ Curseforge: https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplu
 ## Contact me
 
 Discord: https://discord.gg/y8DhYhv427 (Main Language: German) (DavidCraft#2905) <br/>
-Twitter: https://twitter.com/David__Craft <br/>
-GitHub: https://github.com/DavidCraftDev/
+Twitter: https://twitter.com/SanCraftDev <br/>
+GitHub: https://github.com/SanCraftDev
 
 ## License 
   
-MIT License Copyright (c) 2021 DavidCraft
+MIT License Copyright (c) 2021 SanCraft

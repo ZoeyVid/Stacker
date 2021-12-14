@@ -1,4 +1,4 @@
-# Stacker
+# [Stacker](https://github.com/SanCraftDev/Stacker)
 
 A plugin to stack player above player! <br/>
 This plugin works with the Minecraft versions 1.11-1.17.1
@@ -19,17 +19,17 @@ Bugs and feature ideas can be submitted in the issues!
 
 ## The project is also on: 
  
-GitHub: https://github.com/DavidCraftDev/Stacker/ <br/>
-SpigotMC: https://www.spigotmc.org/resources/stacker.94586/ <br/>
-Curseforge: https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplugin <br/>
-(dev.bukkit.org): https://dev.bukkit.org/projects/playerstackerplugin <br/>
-Instant download: https://github.com/SanCraftDev/Stacker/releases/latest/download/Stacker.jar <br>
+[GitHub](https://github.com/DavidCraftDev/Stacker) <br/>
+[SpigotMC](https://www.spigotmc.org/resources/stacker.94586) <br/>
+[Curseforge](https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplugin) <br/>
+[(dev.bukkit.org)](https://dev.bukkit.org/projects/playerstackerplugin) <br/>
+[Instant download](https://github.com/SanCraftDev/Stacker/releases/latest/download/Stacker.jar) <br>
  
 ## Contact me
 
-Discord: https://sancraft.de/dc (Main Language: German) (DavidCraft#2905) <br/>
-Twitter: https://twitter.com/SanCraftDev <br/>
-GitHub: https://github.com/SanCraftDev
+[Discord](https://sancraft.de/dc) (Main Language: German) (DavidCraft#2905) <br/>
+[Twitter](https://twitter.com/SanCraftDev) <br/>
+[GitHub](https://github.com/SanCraftDev) <br/>
 
 ## License 
   

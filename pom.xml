@@ -51,6 +51,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+        <finalName>stacker</finalName>
     </build>
 
     <repositories>

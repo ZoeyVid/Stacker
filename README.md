@@ -6,12 +6,12 @@ This plugin works with the Minecraft versions 1.11-1.17.1
 ## Commands & Permissions
 
 **Command - Descripton - Needed Permission** <br/>
-/stacker - Toggle stackermode - stacker.use.self
-/stacker toggle/enable/disable - Also toggle stackermode - stacker.use.self
-/stacker toggle/enable/disable - Toggle stackmode for an other player - stacker.use.other
-/stacker immune - Enable or disable the immune mode for your self - stacker.immune.self
-/stacker immune - Enable or disable the immune mode for another player - stacker.immune.other
-/stacker help - View a help menu - stacker.help
+/stacker - Toggle stackermode - stacker.use.self <br/>
+/stacker toggle/enable/disable - Also toggle stackermode - stacker.use.self <br/>
+/stacker toggle/enable/disable <player> - Toggle stackmode for another player - stacker.use.other <br/>
+/stacker immune - Enable or disable the immune mode for your self - stacker.immune.self <br/>
+/stacker immune <player> - Enable or disable the immune mode for another player - stacker.immune.other <br/>
+/stacker help - View a help menu - stacker.help <br/>
 
 ## A bug or feature?
 

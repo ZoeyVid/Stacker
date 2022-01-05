@@ -5,7 +5,7 @@ This plugin works with the Minecraft versions 1.11-1.17.1
 
 ## Commands & Permissions
 
-**Command - Descripton - Needed Permission** <br/>
+**Command - Description - Needed Permission** <br/>
 /stacker - Toggle stackermode - stacker.use.self <br/>
 /stacker toggle/enable/disable - Also toggle stackermode - stacker.use.self <br/>
 /stacker toggle/enable/disable <player> - Toggle stackmode for another player - stacker.use.other <br/>

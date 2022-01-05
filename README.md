@@ -33,4 +33,4 @@ Bugs and feature ideas can be submitted in the issues!
 
 ## License 
   
-MIT License Copyright (c) 2021 SanCraft
+MIT License Copyright © 2022 SanCraft

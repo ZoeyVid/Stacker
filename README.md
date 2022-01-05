@@ -8,10 +8,10 @@ This plugin works with the Minecraft versions 1.11-1.17.1
 **Command - Descripton - Needed Permission** <br/>
 /stacker - Toggle stackermode - stacker.use.self <br/>
 /stacker toggle/enable/disable - Also toggle stackermode - stacker.use.self <br/>
-/stacker toggle/enable/disable <player> - Toggle stackmode for a other player - stacker.use.other <br/>
-/stacker immune - Enable or disable the immune mode for you self - stacker.immune.self <br/>
-/stacker immune <player> - Enable or disable the immune mode for a other player - stacker.immune.other <br/>
-/stacker help - View a help menu- stacker.help
+/stacker toggle/enable/disable <player> - Toggle stackmode for another player - stacker.use.other <br/>
+/stacker immune - Enable or disable the immune mode for your self - stacker.immune.self <br/>
+/stacker immune <player> - Enable or disable the immune mode for another player - stacker.immune.other <br/>
+/stacker help - View a help menu - stacker.help <br/>
 
 ## A bug or feature?
 
@@ -23,7 +23,10 @@ Bugs and feature ideas can be submitted in the issues!
 [SpigotMC](https://www.spigotmc.org/resources/stacker.94586) <br/>
 [Curseforge](https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplugin) <br/>
 [(dev.bukkit.org)](https://dev.bukkit.org/projects/playerstackerplugin) <br/>
-[Instant download](https://github.com/SanCraftDev/Stacker/releases/latest/download/Stacker.jar) <br>
+[Jenkins (Ci)](https://ci.sancraft.dev/job/Stacker) <br>
+[Jenkins (Ci) - Dev-Version](https://ci.sancraft.dev/job/Stacker-Dev) <br>
+[Instant download](https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
+[Instant download Dev-Version](https://ci.sancraft.dev/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker-dev.jar) <br>
  
 ## Contact me
 
@@ -33,4 +36,4 @@ Bugs and feature ideas can be submitted in the issues!
 
 ## License 
   
-MIT License Copyright (c) 2021 SanCraft
+MIT License Copyright © 2022 SanCraft

@@ -23,7 +23,10 @@ Bugs and feature ideas can be submitted in the issues!
 [SpigotMC](https://www.spigotmc.org/resources/stacker.94586) <br/>
 [Curseforge](https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplugin) <br/>
 [(dev.bukkit.org)](https://dev.bukkit.org/projects/playerstackerplugin) <br/>
-[Instant download](https://github.com/SanCraftDev/Stacker/releases/latest/download/Stacker.jar) <br>
+[Jenkins (Ci)](https://ci.sancraft.dev/job/Stacker) <br>
+[Jenkins (Ci) - Dev-Version](https://ci.sancraft.dev/job/Stacker-Dev) <br>
+[Instant download](https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
+[Instant download Dev-Version](https://ci.sancraft.dev/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker-dev.jar) <br>
  
 ## Contact me
 

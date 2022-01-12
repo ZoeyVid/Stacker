@@ -19,7 +19,7 @@ Bugs and feature ideas can be submitted in the issues!
 
 ## The project is also on: 
  
-[GitHub](https://github.com/DavidCraftDev/Stacker) <br/>
+[GitHub](https://github.com/SanCraftDev/Stacker) <br/>
 [SpigotMC](https://www.spigotmc.org/resources/stacker.94586) <br/>
 [Curseforge](https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplugin) <br/>
 [(dev.bukkit.org)](https://dev.bukkit.org/projects/playerstackerplugin) <br/>

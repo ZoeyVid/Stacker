@@ -20,5 +20,5 @@ saveState: true
 # Should a Player on join default immune?
 defaultImmune: false
 #
-# Language
-languageFile: "en_en"
+# Language (Aviable: en, de)
+languageFile: "en"

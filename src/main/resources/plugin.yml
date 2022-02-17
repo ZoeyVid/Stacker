@@ -1,6 +1,6 @@
 name: Stacker
 version: ${project.version}
-main: dev.stacker.stacker.main
+main: dev.sancraft.stacker.main
 authors: [ DavidCraft ]
 description: A Plugin to Stack Player on the top of a other Player
 

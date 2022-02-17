@@ -1,4 +1,4 @@
-package de.davidcraft.stacker;
+package dev.sancraft.stacker;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -29,7 +29,11 @@ public class loadConfig {
         return cfg.getBoolean("defaultImmune");
     }
 
-    public static void ReadConfig() {
+    public static void readConfig() {
         cfg = YamlConfiguration.loadConfiguration(config);
+    }
+
+    public static String language() {
+        return cfg.getString("languageFile");
     }
 }

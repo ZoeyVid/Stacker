@@ -1,7 +1,8 @@
-package de.davidcraft.stacker.Listener;
+package dev.sancraft.stacker.Listener;
 
-import de.davidcraft.stacker.loadConfig;
-import de.davidcraft.stacker.main;
+import dev.sancraft.stacker.loadConfig;
+import dev.sancraft.stacker.loadLanguage;
+import dev.sancraft.stacker.main;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,7 +18,7 @@ public class EntityInteractListener implements Listener {
             Player target = (Player) event.getRightClicked();
             if (main.getDisabled().contains(target)) {
                 if (loadConfig.showMessage()) {
-                    player.sendMessage(main.getPrefix() + ChatColor.WHITE + "The Player " + target.getName() + " can`t be stacked!");
+                    player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.dontStack().replace("%player%", target.getName()));
                 }
             } else {
                 player.addPassenger(target);

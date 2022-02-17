@@ -1,7 +1,7 @@
-package de.davidcraft.stacker.Listener;
+package dev.sancraft.stacker.Listener;
 
-import de.davidcraft.stacker.loadConfig;
-import de.davidcraft.stacker.main;
+import dev.sancraft.stacker.loadConfig;
+import dev.sancraft.stacker.main;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

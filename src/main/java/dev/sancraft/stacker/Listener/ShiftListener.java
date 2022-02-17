@@ -1,6 +1,5 @@
-package de.davidcraft.stacker.Listener;
+package dev.sancraft.stacker.Listener;
 
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

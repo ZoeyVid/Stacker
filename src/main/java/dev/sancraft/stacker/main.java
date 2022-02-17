@@ -82,6 +82,7 @@ public final class main extends JavaPlugin {
             try {
                 FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/master/languages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
             } catch (Exception e) {
+                Bukkit.getConsoleSender().sendMessage(e);
                 Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
                 Bukkit.getServer().getPluginManager().disablePlugin(this);
             }

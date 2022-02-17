@@ -1,9 +1,10 @@
-package de.davidcraft.stacker;
+package dev.sancraft.stacker;
 
-import de.davidcraft.stacker.Listener.EntityInteractListener;
-import de.davidcraft.stacker.Listener.JoinListener;
-import de.davidcraft.stacker.Listener.QuitListener;
-import de.davidcraft.stacker.Listener.ShiftListener;
+import dev.sancraft.stacker.Listener.EntityInteractListener;
+import dev.sancraft.stacker.Listener.JoinListener;
+import dev.sancraft.stacker.Listener.QuitListener;
+import dev.sancraft.stacker.Listener.ShiftListener;
+import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -12,6 +13,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 
 public final class main extends JavaPlugin {
@@ -20,6 +22,7 @@ public final class main extends JavaPlugin {
     private static final ArrayList stackmode = new ArrayList<Player>();
     private static final ArrayList disabled = new ArrayList<Player>();
     private FileConfiguration cfg;
+    private FileConfiguration lang;
 
     public static String getPrefix() {
         return prefix;
@@ -45,9 +48,11 @@ public final class main extends JavaPlugin {
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.DARK_GREEN + "The Plugin was enabled!");
         loadConfig();
-        loadConfig.ReadConfig();
+        loadConfig.readConfig();
         commandRegistration();
         listenerRegistration();
+        loadLanguages();
+        loadLanguage.readLanguage();
     }
 
     @Override
@@ -64,7 +69,22 @@ public final class main extends JavaPlugin {
             saveDefaultConfig();
             cfg = getConfig();
             cfg.options().copyDefaults(true);
-            Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Create and Loaded config file!");
+            Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Create and loaded config file!");
+        }
+    }
+
+    private void loadLanguages() {
+        if ((new File("plugins/Stacker/language/" + loadConfig.language() + ".yml")).exists()) {
+            lang = getConfig();
+            lang.options().copyDefaults(true);
+            Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Language file loaded! (" + loadConfig.language() + ")");
+        } else {
+            try {
+                FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/master/src/main/languuages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+            } catch (Exception e) {
+                Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
+                Bukkit.getServer().getPluginManager().disablePlugin(this);
+            }
         }
     }
 

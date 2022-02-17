@@ -1,10 +1,11 @@
 # Stacker
-# A Plugin to Stack Player on the top of a other Player
-# by David__Craft
-# Twitter: https://twitter.com/David__Craft
+# A Plugin to Stack Player on the top of another Player
+# by David__Craft for SanCraft
+# GitHub: https://github.com/SanCraftDev
+# Twitter: https://twitter.com/SanCraftDev
 # Discord: https://discord.gg/y8DhYhv427
 #
-# Should the stackmode enabeld default on join?
+# Should the stackmode enabled default on join?
 defaultOn: false
 #
 # Should show a message when a player a not stackable?
@@ -16,5 +17,8 @@ sendMessage: true
 # Should save the last state of player until the next Server restart?
 saveState: true
 #
-# Should a Player on join default immun?
+# Should a Player on join default immune?
 defaultImmune: false
+#
+# Language
+languageFile: "en_en"

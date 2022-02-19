@@ -22,3 +22,9 @@ defaultImmune: false
 #
 # Language (Aviable: en, de)
 languageFile: "en"
+#
+# Should the plugin automatically update?
+autoUpdate: true
+#
+# Should the plugin automatically update the Language File? (This will delete your custom changes)
+autoUpdateLanguage: true

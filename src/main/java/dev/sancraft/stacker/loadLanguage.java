@@ -192,4 +192,12 @@ public class loadLanguage {
     public static void readLanguage() {
         lang = YamlConfiguration.loadConfiguration(language);
     }
+
+    public static int getVersion() {
+        if (lang.isInt("version")) {
+            return lang.getInt("version");
+        } else {
+            return 1;
+        }
+    }
 }

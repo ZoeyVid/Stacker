@@ -23,6 +23,7 @@ public final class main extends JavaPlugin {
     private static final ArrayList disabled = new ArrayList<Player>();
     private FileConfiguration cfg;
     private FileConfiguration lang;
+    private final int langVersion = 2;
 
     public static String getPrefix() {
         return prefix;
@@ -53,6 +54,8 @@ public final class main extends JavaPlugin {
         listenerRegistration();
         loadLanguages();
         loadLanguage.readLanguage();
+        updatePlugin();
+        updateLanguage();
     }
 
     @Override
@@ -74,6 +77,10 @@ public final class main extends JavaPlugin {
     }
 
     private void loadLanguages() {
+        File langDir = new File("plugins/Stacker");
+        if (!langDir.exists()) {
+            langDir.mkdirs();
+        }
         if ((new File("plugins/Stacker/language/" + loadConfig.language() + ".yml")).exists()) {
             lang = getConfig();
             lang.options().copyDefaults(true);
@@ -82,9 +89,41 @@ public final class main extends JavaPlugin {
             try {
                 FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/master/languages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
             } catch (Exception e) {
-                Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
-                Bukkit.getServer().getPluginManager().disablePlugin(this);
+                try {
+                    FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/master/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+                } catch (Exception e1) {
+                    Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
+                    Bukkit.getServer().getPluginManager().disablePlugin(this);
+                }
             }
+        }
+    }
+
+    private void updatePlugin() {
+        if (loadConfig.autoUpdate()) {
+            try {
+                FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
+            } catch (Exception e) {
+                Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while updating the plugin!");
+            }
+        }
+    }
+
+    private void updateLanguage() {
+        if (loadConfig.autoUpdateLanguage() && loadLanguage.getVersion() != langVersion) {
+            try {
+                FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/master/languages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+            } catch (Exception e) {
+                try {
+                    FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/master/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+                } catch (Exception e1) {
+                    Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
+                    Bukkit.getServer().getPluginManager().disablePlugin(this);
+                }
+            }
+            Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Language file updated! (" + loadConfig.language() + ", " + loadLanguage.getVersion() + " -> " + langVersion + ")");
+            loadLanguages();
+            loadLanguage.readLanguage();
         }
     }
 

@@ -66,4 +66,22 @@ public class loadConfig {
             return "en";
         }
     }
+
+    public static Boolean autoUpdate() {
+        if (cfg.isBoolean("autoUpdate")) {
+            return cfg.getBoolean("autoUpdate");
+        } else {
+            cfg.set("autoUpdate", true);
+            return true;
+        }
+    }
+
+    public static Boolean autoUpdateLanguage() {
+        if (cfg.isBoolean("autoUpdateLanguage")) {
+            return cfg.getBoolean("autoUpdateLanguage");
+        } else {
+            cfg.set("autoUpdateLanguage", true);
+            return true;
+        }
+    }
 }

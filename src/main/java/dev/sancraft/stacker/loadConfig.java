@@ -10,23 +10,48 @@ public class loadConfig {
     private static FileConfiguration cfg;
 
     public static boolean defaultON() {
-        return cfg.getBoolean("defaultOn");
+        if (cfg.isBoolean("defaultON")) {
+            return cfg.getBoolean("defaultOn");
+        } else {
+            cfg.set("defaultOn", false);
+            return false;
+        }
     }
 
     public static boolean showMessage() {
-        return cfg.getBoolean("showMessage");
+        if (cfg.isBoolean("showMessage")) {
+            return cfg.getBoolean("showMessage");
+        } else {
+            cfg.set("showMessage", true);
+            return true;
+        }
     }
 
     public static boolean sendMessage() {
-        return cfg.getBoolean("sendMessage");
+        if (cfg.isBoolean("sendMessage")) {
+            return cfg.getBoolean("sendMessage");
+        } else {
+            cfg.set("sendMessage", true);
+            return true;
+        }
     }
 
     public static boolean saveState() {
-        return cfg.getBoolean("saveState");
+        if (cfg.isBoolean("saveState")) {
+            return cfg.getBoolean("saveState");
+        } else {
+            cfg.set("saveState", true);
+            return true;
+        }
     }
 
     public static boolean defaultImmune() {
-        return cfg.getBoolean("defaultImmune");
+        if (cfg.isBoolean("defaultImmune")) {
+            return cfg.getBoolean("defaultImmune");
+        } else {
+            cfg.set("defaultImmune", false);
+            return false;
+        }
     }
 
     public static void readConfig() {
@@ -34,6 +59,11 @@ public class loadConfig {
     }
 
     public static String language() {
-        return cfg.getString("languageFile");
+        if (cfg.isString("languageFile")) {
+            return cfg.getString("languageFile");
+        } else {
+            cfg.set("languageFile", "en");
+            return "en";
+        }
     }
 }

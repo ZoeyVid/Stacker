@@ -20,7 +20,7 @@ saveState: true
 # Should a Player on join default immune?
 defaultImmune: false
 #
-# Language (Aviable: en, de)
+# Language (Aviable Languages: https://github.com/SanCraftDev/Stacker/tree/master/languages)
 languageFile: "en"
 #
 # Should the plugin automatically update?

@@ -17,6 +17,9 @@ This plugin works with the Minecraft versions 1.11-1.18.1
 
 Bugs and feature ideas can be submitted in the issues!
 
+## Translate
+[Read more here](https://github.com/SanCraftDev/Stacker/tree/master/languages/README.md)
+
 ## The project is also on:
 
 [GitHub](https://github.com/SanCraftDev/Stacker) <br/>

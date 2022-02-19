@@ -23,11 +23,8 @@ defaultImmune: false
 # Language (Aviable Languages: https://github.com/SanCraftDev/Stacker/tree/master/languages)
 languageFile: "en"
 #
-# Should the plugin automatically update? (Stable) 
+# Should the plugin automatically update? (dev) 
 autoUpdate: false
-#
-# Should the plugin automatically update? (Dev) 
-autoUpdateDev: true
 #
 # Should the plugin automatically update the Language File? (This will delete your custom changes)
 autoUpdateLanguage: true

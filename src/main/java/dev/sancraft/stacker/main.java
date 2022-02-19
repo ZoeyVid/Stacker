@@ -102,7 +102,7 @@ public final class main extends JavaPlugin {
     private void updatePlugin() {
         if (loadConfig.autoUpdate()) {
             try {
-                FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
+                FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/view/Plugins/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker-dev.jar"), new File("plugins/stacker-dev.jar"));
             } catch (Exception e) {
                 Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while updating the plugin!");
             }

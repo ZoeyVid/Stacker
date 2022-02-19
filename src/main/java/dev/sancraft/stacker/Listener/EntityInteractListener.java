@@ -21,7 +21,9 @@ public class EntityInteractListener implements Listener {
                     player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.dontStack().replace("%player%", target.getName()));
                 }
             } else {
-                player.addPassenger(target);
+                if (player.getWorld().getPlayers().contains(target)) {
+                    player.addPassenger(target);
+                }
             }
         }
     }

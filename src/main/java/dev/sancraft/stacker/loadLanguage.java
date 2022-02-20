@@ -13,7 +13,7 @@ public class loadLanguage {
         if (lang.isString("dontStack")) {
             return lang.getString("dontStack");
         } else {
-            lang.set("dontStack", "The Player %player% can`t be stacked!");
+            lang.addDefault("dontStack", "The Player %player% can`t be stacked!");
             return "The Player %player% can`t be stacked!";
         }
     }
@@ -22,7 +22,7 @@ public class loadLanguage {
         if (lang.isString("leaveStackmode")) {
             return lang.getString("leaveStackmode");
         } else {
-            lang.set("leaveStackmode", "You are not longer in the stackmode!");
+            lang.addDefault("leaveStackmode", "You are not longer in the stackmode!");
             return "You are not longer in the stackmode!";
         }
     }
@@ -31,7 +31,7 @@ public class loadLanguage {
         if (lang.isString("joinStackmode")) {
             return lang.getString("joinStackmode");
         } else {
-            lang.set("joinStackmode", "You are now in the stackmode!");
+            lang.addDefault("joinStackmode", "You are now in the stackmode!");
             return "You are now in the stackmode!";
         }
     }
@@ -40,7 +40,7 @@ public class loadLanguage {
         if (lang.isString("permissionError")) {
             return lang.getString("permissionError");
         } else {
-            lang.set("permissionError", "You dont have the Permission to use this Command! Missing: %permission%");
+            lang.addDefault("permissionError", "You dont have the Permission to use this Command! Missing: %permission%");
             return "You dont have the Permission to use this Command! Missing: %permission%";
         }
     }
@@ -49,7 +49,7 @@ public class loadLanguage {
         if (lang.isString("helpTitle")) {
             return lang.getString("helpTitle");
         } else {
-            lang.set("helpTitle", "Stacker Help");
+            lang.addDefault("helpTitle", "Stacker Help");
             return "Stacker Help";
         }
     }
@@ -58,7 +58,7 @@ public class loadLanguage {
         if (lang.isString("helpHelp")) {
             return lang.getString("helpHelp");
         } else {
-            lang.set("helpHelp", "Shows this Help");
+            lang.addDefault("helpHelp", "Shows this Help");
             return "Shows this Help";
         }
     }
@@ -67,7 +67,7 @@ public class loadLanguage {
         if (lang.isString("helpNormal")) {
             return lang.getString("helpNormal");
         } else {
-            lang.set("helpNormal", " Toggle the stackmode");
+            lang.addDefault("helpNormal", " Toggle the stackmode");
             return " Toggle the stackmode";
         }
     }

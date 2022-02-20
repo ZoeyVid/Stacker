@@ -13,7 +13,7 @@ public class loadConfig {
         if (cfg.isBoolean("defaultON")) {
             return cfg.getBoolean("defaultOn");
         } else {
-            cfg.set("defaultOn", false);
+            cfg.addDefault("defaultOn", false);
             return false;
         }
     }
@@ -22,7 +22,7 @@ public class loadConfig {
         if (cfg.isBoolean("showMessage")) {
             return cfg.getBoolean("showMessage");
         } else {
-            cfg.set("showMessage", true);
+            cfg.addDefault("showMessage", true);
             return true;
         }
     }
@@ -31,7 +31,7 @@ public class loadConfig {
         if (cfg.isBoolean("sendMessage")) {
             return cfg.getBoolean("sendMessage");
         } else {
-            cfg.set("sendMessage", true);
+            cfg.addDefault("sendMessage", true);
             return true;
         }
     }
@@ -40,7 +40,7 @@ public class loadConfig {
         if (cfg.isBoolean("saveState")) {
             return cfg.getBoolean("saveState");
         } else {
-            cfg.set("saveState", true);
+            cfg.addDefault("saveState", true);
             return true;
         }
     }
@@ -49,7 +49,7 @@ public class loadConfig {
         if (cfg.isBoolean("defaultImmune")) {
             return cfg.getBoolean("defaultImmune");
         } else {
-            cfg.set("defaultImmune", false);
+            cfg.addDefault("defaultImmune", false);
             return false;
         }
     }
@@ -62,7 +62,7 @@ public class loadConfig {
         if (cfg.isString("languageFile")) {
             return cfg.getString("languageFile");
         } else {
-            cfg.set("languageFile", "en");
+            cfg.addDefault("languageFile", "en");
             return "en";
         }
     }
@@ -72,7 +72,6 @@ public class loadConfig {
             return cfg.getBoolean("autoUpdate");
         } else {
             cfg.addDefault("autoUpdate", true);
-            cfg.set("autoUpdate", true);
             return true;
         }
     }
@@ -81,7 +80,7 @@ public class loadConfig {
         if (cfg.isString("updateChannel")) {
             return cfg.getString("updateChannel");
         } else {
-            cfg.set("updateChannel", "stable");
+            cfg.addDefault("updateChannel", "stable");
             return "stable";
         }
     }
@@ -90,7 +89,7 @@ public class loadConfig {
         if (cfg.isBoolean("autoUpdateLanguage")) {
             return cfg.getBoolean("autoUpdateLanguage");
         } else {
-            cfg.set("autoUpdateLanguage", true);
+            cfg.addDefault("autoUpdateLanguage", true);
             return true;
         }
     }

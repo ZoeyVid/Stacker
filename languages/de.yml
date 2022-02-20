@@ -1,3 +1,4 @@
+version: 2
 dontStack: "Der Spieler %player% kann nicht gestackt werden!"
 leaveStackmode: "Du bist nicht mehr im Stackermodus!"
 joinStackmode: "Du bist nun im Stackermodus!"

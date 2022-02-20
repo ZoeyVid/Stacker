@@ -17,6 +17,10 @@ This plugin works with the Minecraft versions 1.11-1.18.1
 
 Bugs and feature ideas can be submitted in the issues!
 
+## Translate
+
+[Read more here](https://github.com/SanCraftDev/Stacker/tree/master/languages/README.md)
+
 ## The project is also on:
 
 [GitHub](https://github.com/SanCraftDev/Stacker) <br/>
@@ -26,7 +30,7 @@ Bugs and feature ideas can be submitted in the issues!
 [Jenkins (Ci)](https://ci.sancraft.dev/job/Stacker) <br>
 [Jenkins (Ci) - Dev-Version](https://ci.sancraft.dev/job/Stacker-Dev) <br>
 [Instant download](https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
-[Instant download Dev-Version](https://ci.sancraft.dev/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker-dev.jar) <br>
+[Instant download Dev-Version](https://ci.sancraft.dev/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
 
 ## Contact me
 

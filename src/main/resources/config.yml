@@ -1,6 +1,6 @@
 # Stacker
 # A Plugin to Stack Player on the top of another Player
-# by David__Craft for SanCraft
+# by DavidCraftDev for SanCraft
 # GitHub: https://github.com/SanCraftDev
 # Twitter: https://twitter.com/SanCraftDev
 # Discord: https://discord.gg/y8DhYhv427
@@ -8,17 +8,26 @@
 # Should the stackmode enabled default on join?
 defaultOn: false
 #
-# Should show a message when a player a not stackable?
+# Should a message be shown when a player a not stackable?
 showMessage: true
 #
-# Should a message be sent to the player when stickmode or immune mode is activated or deactivated for him by someone else?
+# Should a message be sent to the player when stackmode or immune is activated or deactivated for him by someone else?
 sendMessage: true
 #
-# Should save the last state of player until the next Server restart?
+# Should the last state of player be saved until the next Server restart?
 saveState: true
 #
-# Should a Player on join default immune?
+# Should a Player be on join default immune?
 defaultImmune: false
 #
-# Language (Aviable: en, de)
+# Language (Available Languages: https://github.com/SanCraftDev/Stacker/tree/master/languages)
 languageFile: "en"
+#
+# Should the plugin automatically update?
+autoUpdate: true
+#
+# Update Channel (Available Channels: Stable & master) - Downloaded from our ci (https://ci.sancraft.dev)
+updateChannel: "master"
+#
+# Should the plugin automatically update the Language File? (This will delete your custom changes)
+autoUpdateLanguage: true

@@ -1,7 +1,8 @@
+version: 2
 dontStack: "The Player %player% can`t be stacked!"
 leaveStackmode: "You are not longer in the stackmode!"
 joinStackmode: "You are now in the stackmode!"
-permissionError: "You dont have the Permission to use this Command! Missing: %permission%"
+permissionError: "You dont have the Permission to use this Command! Missing permission: %permission%"
 helpTitle: "Stacker Help"
 helpNormal: " Toggle the stackmode"
 helpToggle: " Toggle the stackmode for another player"

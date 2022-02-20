@@ -4,6 +4,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
+import java.io.IOException;
 
 public class loadConfig {
     private static final File config = new File("plugins/Stacker", "config.yml");
@@ -14,6 +15,7 @@ public class loadConfig {
             return cfg.getBoolean("defaultOn");
         } else {
             cfg.addDefault("defaultOn", false);
+            saveConfig();
             return false;
         }
     }
@@ -23,6 +25,7 @@ public class loadConfig {
             return cfg.getBoolean("showMessage");
         } else {
             cfg.addDefault("showMessage", true);
+            saveConfig();
             return true;
         }
     }
@@ -32,6 +35,7 @@ public class loadConfig {
             return cfg.getBoolean("sendMessage");
         } else {
             cfg.addDefault("sendMessage", true);
+            saveConfig();
             return true;
         }
     }
@@ -41,6 +45,7 @@ public class loadConfig {
             return cfg.getBoolean("saveState");
         } else {
             cfg.addDefault("saveState", true);
+            saveConfig();
             return true;
         }
     }
@@ -50,6 +55,7 @@ public class loadConfig {
             return cfg.getBoolean("defaultImmune");
         } else {
             cfg.addDefault("defaultImmune", false);
+            saveConfig();
             return false;
         }
     }
@@ -63,6 +69,7 @@ public class loadConfig {
             return cfg.getString("languageFile");
         } else {
             cfg.addDefault("languageFile", "en");
+            saveConfig();
             return "en";
         }
     }
@@ -72,6 +79,7 @@ public class loadConfig {
             return cfg.getBoolean("autoUpdate");
         } else {
             cfg.addDefault("autoUpdate", true);
+            saveConfig();
             return true;
         }
     }
@@ -81,6 +89,7 @@ public class loadConfig {
             return cfg.getString("updateChannel");
         } else {
             cfg.addDefault("updateChannel", "stable");
+            saveConfig();
             return "stable";
         }
     }
@@ -90,7 +99,16 @@ public class loadConfig {
             return cfg.getBoolean("autoUpdateLanguage");
         } else {
             cfg.addDefault("autoUpdateLanguage", true);
+            saveConfig();
             return true;
+        }
+    }
+
+    public static void saveConfig() {
+        try {
+            cfg.save(config);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

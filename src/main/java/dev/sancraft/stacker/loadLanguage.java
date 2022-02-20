@@ -36,6 +36,14 @@ public class loadLanguage {
         }
     }
 
+    public static void saveConfig() {
+        try {
+            lang.save(language);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static String permissionError() {
         if (lang.isString("permissionError")) {
             return lang.getString("permissionError");

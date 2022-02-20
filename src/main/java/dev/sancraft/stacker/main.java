@@ -102,11 +102,13 @@ public final class main extends JavaPlugin {
     private void updatePlugin() {
         if (loadConfig.autoUpdate()) {
             try {
-                if (loadConfig.updateChannel().equalsIgnoreCase("stable")) {
-                    FileUtils.delete(new File("plugins/Stacker/stacker-dev.jar"));
+                if (loadConfig.updateChannel().equalsIgnoreCase("Stable")) {
+                    File oldFile = new File("plugins/stacker-dev.jar");
+                    if(oldFile.exists()) FileUtils.delete(oldFile);
                     FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
                 } else {
-                    FileUtils.delete(new File("plugins/stacker.jar"));
+                    File oldFile = new File("plugins/stacker.jar");
+                    if(oldFile.exists()) FileUtils.delete(oldFile);
                     FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/view/Plugins/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker-dev.jar"), new File("plugins/stacker-dev.jar"));
                 }
             } catch (Exception e) {

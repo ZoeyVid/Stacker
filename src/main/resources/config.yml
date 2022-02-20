@@ -1,6 +1,6 @@
 # Stacker
 # A Plugin to Stack Player on the top of another Player
-# by David__Craft for SanCraft
+# by DavidCraftDev for SanCraft
 # GitHub: https://github.com/SanCraftDev
 # Twitter: https://twitter.com/SanCraftDev
 # Discord: https://discord.gg/y8DhYhv427
@@ -25,8 +25,9 @@ languageFile: "en"
 #
 # Should the plugin automatically update?
 autoUpdate: true
-# Update Channel (Available Channels: Stable & master)
-updateChannel: "Stable"
+#
+# Update Channel (Available Channels: Stable & master) - Downloaded from our ci (https://ci.sancraft.dev)
+updateChannel: "master"
 #
 # Should the plugin automatically update the Language File? (This will delete your custom changes)
 autoUpdateLanguage: true

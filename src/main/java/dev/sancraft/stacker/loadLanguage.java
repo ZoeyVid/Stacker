@@ -14,6 +14,7 @@ public class loadLanguage {
             return lang.getString("dontStack");
         } else {
             lang.addDefault("dontStack", "The Player %player% can`t be stacked!");
+            saveLanguage();
             return "The Player %player% can`t be stacked!";
         }
     }
@@ -23,6 +24,7 @@ public class loadLanguage {
             return lang.getString("leaveStackmode");
         } else {
             lang.addDefault("leaveStackmode", "You are not longer in the stackmode!");
+            saveLanguage();
             return "You are not longer in the stackmode!";
         }
     }
@@ -32,11 +34,12 @@ public class loadLanguage {
             return lang.getString("joinStackmode");
         } else {
             lang.addDefault("joinStackmode", "You are now in the stackmode!");
+            saveLanguage();
             return "You are now in the stackmode!";
         }
     }
 
-    public static void saveConfig() {
+    public static void saveLanguage() {
         try {
             lang.save(language);
         } catch (Exception e) {
@@ -49,6 +52,7 @@ public class loadLanguage {
             return lang.getString("permissionError");
         } else {
             lang.addDefault("permissionError", "You dont have the Permission to use this Command! Missing: %permission%");
+            saveLanguage();
             return "You dont have the Permission to use this Command! Missing: %permission%";
         }
     }
@@ -58,6 +62,7 @@ public class loadLanguage {
             return lang.getString("helpTitle");
         } else {
             lang.addDefault("helpTitle", "Stacker Help");
+            saveLanguage();
             return "Stacker Help";
         }
     }
@@ -67,6 +72,7 @@ public class loadLanguage {
             return lang.getString("helpHelp");
         } else {
             lang.addDefault("helpHelp", "Shows this Help");
+            saveLanguage();
             return "Shows this Help";
         }
     }
@@ -76,6 +82,7 @@ public class loadLanguage {
             return lang.getString("helpNormal");
         } else {
             lang.addDefault("helpNormal", " Toggle the stackmode");
+            saveLanguage();
             return " Toggle the stackmode";
         }
     }
@@ -85,6 +92,7 @@ public class loadLanguage {
             return lang.getString("helpToggle");
         } else {
             lang.set("helpToggle", " Toggle the stackmode for another player");
+            saveLanguage();
             return " Toggle the stackmode for another player";
         }
     }
@@ -94,6 +102,7 @@ public class loadLanguage {
             return lang.getString("helpImmune");
         } else {
             lang.set("helpImmune", " Toggle Immunemode for another Player or self");
+            saveLanguage();
             return " Toggle Immunemode for another Player or self";
         }
     }
@@ -103,6 +112,7 @@ public class loadLanguage {
             return lang.getString("leaveImmune");
         } else {
             lang.set("leaveImmune", "You are not longer immune!");
+            saveLanguage();
             return "You are not longer immune!";
         }
     }
@@ -112,6 +122,7 @@ public class loadLanguage {
             return lang.getString("joinImmune");
         } else {
             lang.set("joinImmune", "You are now immune!");
+            saveLanguage();
             return "You are now immune!";
         }
     }
@@ -121,6 +132,7 @@ public class loadLanguage {
             return lang.getString("errorPlayerOnline");
         } else {
             lang.set("errorPlayerOnline", "You must name a online Player!");
+            saveLanguage();
             return "You must name a online Player!";
         }
     }
@@ -130,6 +142,7 @@ public class loadLanguage {
             return lang.getString("leaveStackmodeOther");
         } else {
             lang.set("leaveStackmodeOther", "The Player %player% is not longer in the stackmode!");
+            saveLanguage();
             return "The Player %player% is not longer in the stackmode!";
         }
     }
@@ -139,6 +152,7 @@ public class loadLanguage {
             return lang.getString("joinStackmodeOther");
         } else {
             lang.set("joinStackmodeOther", "The Player %player% is now in the stackmode!");
+            saveLanguage();
             return "The Player %player% is now in the stackmode!";
         }
     }
@@ -148,6 +162,7 @@ public class loadLanguage {
             return lang.getString("leaveStackmodeSelf");
         } else {
             lang.set("leaveStackmodeSelf", "You are not longer in the stackmode!");
+            saveLanguage();
             return "You are not longer in the stackmode!";
         }
     }
@@ -157,6 +172,7 @@ public class loadLanguage {
             return lang.getString("joinStackmodeSelf");
         } else {
             lang.set("joinStackmodeSelf", "You are now in the stackmode!");
+            saveLanguage();
             return "You are now in the stackmode!";
         }
     }
@@ -166,6 +182,7 @@ public class loadLanguage {
             return lang.getString("leaveImmmuneOther");
         } else {
             lang.set("leaveImmuneOther", "The Player %player% is not longer immune!");
+            saveLanguage();
             return "The Player %player% is not longer immune!";
         }
     }
@@ -175,6 +192,7 @@ public class loadLanguage {
             return lang.getString("joinImmmuneOther");
         } else {
             lang.set("joinImmuneOther", "The Player %player% is now immune!");
+            saveLanguage();
             return "The Player %player% is now immune!";
         }
     }
@@ -184,6 +202,7 @@ public class loadLanguage {
             return lang.getString("leaveImmmuneSelf");
         } else {
             lang.set("leaveImmuneSelf", "You are not longer immune!");
+            saveLanguage();
             return "You are not longer immune!";
         }
     }
@@ -193,6 +212,7 @@ public class loadLanguage {
             return lang.getString("joinImmmuneSelf");
         } else {
             lang.set("joinImmuneSelf", "You are now immune!");
+            saveLanguage();
             return "You are now immune!";
         }
     }

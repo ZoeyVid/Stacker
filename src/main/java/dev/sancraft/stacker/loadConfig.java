@@ -71,6 +71,7 @@ public class loadConfig {
         if (cfg.isBoolean("autoUpdate")) {
             return cfg.getBoolean("autoUpdate");
         } else {
+            cfg.addDefault("autoUpdate", true);
             cfg.set("autoUpdate", true);
             return true;
         }

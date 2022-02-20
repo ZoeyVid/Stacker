@@ -76,6 +76,15 @@ public class loadConfig {
         }
     }
 
+    public static String updateChannel() {
+        if (cfg.isString("updateChannel")) {
+            return cfg.getString("updateChannel");
+        } else {
+            cfg.set("updateChannel", "stable");
+            return "stable";
+        }
+    }
+
     public static Boolean autoUpdateLanguage() {
         if (cfg.isBoolean("autoUpdateLanguage")) {
             return cfg.getBoolean("autoUpdateLanguage");

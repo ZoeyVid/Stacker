@@ -106,14 +106,14 @@ public final class main extends JavaPlugin {
     private void updatePlugin() {
         if (loadConfig.autoUpdate()) {
             try {
-                if (loadConfig.updateChannel().equalsIgnoreCase("Stable")) {
-                    File oldFile = new File("plugins/stacker.jar");
-                    if(oldFile.exists()) FileUtils.delete(oldFile);
-                    FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
-                } else {
+                if (loadConfig.updateChannel().equalsIgnoreCase("master")) {
                     File oldFile = new File("plugins/stacker.jar");
                     if(oldFile.exists()) FileUtils.delete(oldFile);
                     FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/view/Plugins/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
+                } else {
+                    File oldFile = new File("plugins/stacker.jar");
+                    if(oldFile.exists()) FileUtils.delete(oldFile);
+                    FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
                 }
             } catch (Exception e) {
                 Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while updating the plugin!");

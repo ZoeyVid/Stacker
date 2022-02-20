@@ -49,11 +49,9 @@ public final class main extends JavaPlugin {
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.DARK_GREEN + "The Plugin was enabled!");
         loadConfig();
-        loadConfig.readConfig();
         commandRegistration();
         listenerRegistration();
         loadLanguages();
-        loadLanguage.readLanguage();
         updatePlugin();
         updateLanguage();
     }
@@ -74,6 +72,7 @@ public final class main extends JavaPlugin {
             cfg.options().copyDefaults(true);
             Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Create and loaded config file!");
         }
+        loadConfig.readConfig();
     }
 
     private void loadLanguages() {
@@ -97,6 +96,7 @@ public final class main extends JavaPlugin {
                 }
             }
         }
+        loadLanguage.readLanguage();
     }
 
     private void updatePlugin() {

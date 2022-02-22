@@ -40,4 +40,4 @@ Bugs and feature ideas can be submitted in the issues!
 
 ## License
 
-MIT License Copyright © 2022 SanCraft
+Mozilla Public License 2.0 Copyright © 2022 SanCraft

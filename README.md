@@ -44,7 +44,7 @@ This Minecraft versions a currently supported
 
 Bugs and feature ideas can be submitted in the issues!
   
-## Contact me
+## Contact us
 
 [Discord](https://sancraft.de/dc) (Main Language: German) (DavidCraft#2905) <br/>
 [Twitter](https://twitter.com/SanCraftDev) <br/>

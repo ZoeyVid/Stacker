@@ -13,7 +13,7 @@ This plugin works with the Minecraft versions 1.11-1.18.1
 /stacker immune <player> - Enable or disable the immune mode for another player - stacker.immune.other <br/>
 /stacker help - View a help menu - stacker.help <br/>
 
-## Translate
+## Translate the Plugin
 
 [Read more here](https://github.com/SanCraftDev/Stacker/tree/master/languages/README.md)
 

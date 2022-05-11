@@ -9,12 +9,12 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class QuitListener implements Listener {
 
-    @EventHandler
-    public void onQuit(PlayerQuitEvent event) {
-        Player player = event.getPlayer();
-        if (!loadConfig.saveState()) {
-            main.getDisabled().remove(player);
-            main.getStackmode().remove(player);
-        }
+  @EventHandler
+  public void onQuit(PlayerQuitEvent event) {
+    Player player = event.getPlayer();
+    if (!loadConfig.saveState()) {
+      main.getDisabled().remove(player);
+      main.getStackmode().remove(player);
     }
+  }
 }

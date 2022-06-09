@@ -7,11 +7,12 @@ import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 public class ShiftListener implements Listener {
 
-  @EventHandler
-  public void onShift(PlayerToggleSneakEvent event) {
-    Player player = event.getPlayer();
-    if (!player.getPassengers() == null) {
-      player.eject();
+    @EventHandler
+    public void onShift(PlayerToggleSneakEvent event) {
+        Player player = event.getPlayer();
+        if (!player.getPassengers().equals(null)) {
+            player.eject();
+        }
     }
-  }
+
 }

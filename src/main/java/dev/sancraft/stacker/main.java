@@ -106,7 +106,7 @@ public final class main extends JavaPlugin {
     private void updatePlugin() {
         if (loadConfig.autoUpdate()) {
             try {
-                if (loadConfig.updateChannel().equalsIgnoreCase("master")) {
+                if (loadConfig.updateChannel().equalsIgnoreCase("dev")) {
                     File oldFile = new File("plugins/stacker.jar");
                     if(oldFile.exists()) FileUtils.delete(oldFile);
                     FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));

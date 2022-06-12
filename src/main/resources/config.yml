@@ -26,8 +26,8 @@ languageFile: "en"
 # Should the plugin automatically update?
 autoUpdate: true
 #
-# Update Channel (Available Channels: Stable & master) - Downloaded from our ci (https://ci.sancraft.dev)
-updateChannel: "Stable"
+# Update Channel (Available Channels: stable & dev) - Downloaded from our ci (https://ci.sancraft.dev)
+updateChannel: "stable"
 #
 # Should the plugin automatically update the Language File? (This will delete your custom changes)
 autoUpdateLanguage: true

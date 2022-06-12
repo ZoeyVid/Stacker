@@ -4,12 +4,16 @@ desktop.files.json
 package-lock.json
 yarn.lock 
 desktop.ini
-config.*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
 
 composer.phar
 /vendor/
 
-/*
 !/jobs
 !/.gitignore
 !/*.xml
@@ -69,11 +73,6 @@ hs_err_pid*
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
-
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
 
 # Icon must end with two \r
 Icon

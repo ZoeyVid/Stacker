@@ -32,4 +32,5 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: artifacts
-        path: target/stacker*.jar
+        path: |
+          target/stacker*.jar

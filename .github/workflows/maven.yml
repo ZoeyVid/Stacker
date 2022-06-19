@@ -22,6 +22,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Change config.yml if stable
+      if: github.ref != 'refs/heads/stable'
+      run: | 
+       sed -i 's/"dev"/"stable"/g' src/main/resources/config.yml
+       grep src/main/resources/config.yml -e "stable"
+
     - name: Build with Maven
       run: | 
        sed -i 's/0.0.0/${{ steps.version.outputs.version }}/g' pom.xml

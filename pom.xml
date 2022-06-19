@@ -6,7 +6,7 @@
 
     <groupId>dev.sancraft</groupId>
     <artifactId>stacker</artifactId>
-    <version>dev</version>
+    <version>0.0.0</version>
     <packaging>jar</packaging>
 
     <name>Stacker</name>

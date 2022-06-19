@@ -2,6 +2,10 @@ name: Release with Maven
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/release.yml
+      - .version
 
 jobs:
   build:

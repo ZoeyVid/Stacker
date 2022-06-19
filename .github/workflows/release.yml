@@ -41,6 +41,7 @@ jobs:
           target/stacker.jar
 
     - uses: "marvinpinto/action-automatic-releases@latest"
+      if: github.event_name != 'pull_request'
       with:
         prerelease: ${{ github.ref != 'refs/heads/stable' }}
         repo_token: ${{ github.token }}

@@ -23,9 +23,7 @@ jobs:
       run: echo "::set-output name=version::$(cat .github/.version)"
 
     - name: Change config.yml if stable
-      if: | 
-       github.ref == 'refs/heads/stable'
-       github.event_name != 'pull_request'
+      if: github.ref == 'refs/heads/stable' || github.event_name != 'pull_request'
       run: | 
        sed -i 's/"dev"/"stable"/g' src/main/resources/config.yml
        grep src/main/resources/config.yml -e "stable"

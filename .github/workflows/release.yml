@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Release with Maven
 
 on:
   workflow_dispatch:

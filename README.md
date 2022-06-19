@@ -1,7 +1,7 @@
 # [Stacker](https://github.com/SanCraftDev/Stacker)
 
 A plugin to stack player above player! <br/>
-This plugin works with the Minecraft versions 1.11-1.18.2
+This plugin works with the Minecraft versions 1.11-1.19
 
 ## Commands & Permissions
 

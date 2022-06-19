@@ -39,4 +39,4 @@ jobs:
       with:
         name: artifacts
         path: |
-          target/stacker*.jar
+          target/stacker.jar

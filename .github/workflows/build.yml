@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Build with Maven
 
 on:
   push:
@@ -11,10 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Read .version file
-      id: version
-      run: echo "::set-output name=version::$(cat .github/.version)"
-
     - name: Set up JDK 8
       uses: actions/setup-java@v3
       with:
@@ -22,8 +18,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Read .version file
+      id: version
+      run: echo "::set-output name=version::$(cat .github/.version)"
+
     - name: Change config.yml if stable
-      if: github.ref == 'refs/heads/stable'
+      if: github.ref == 'refs/heads/stable' && github.event_name != 'pull_request'
       run: | 
        sed -i 's/"dev"/"stable"/g' src/main/resources/config.yml
        grep src/main/resources/config.yml -e "stable"
@@ -39,4 +39,14 @@ jobs:
       with:
         name: artifacts
         path: |
+          target/stacker.jar
+
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      if: github.event_name != 'pull_request'
+      with:
+        prerelease: ${{ github.ref != 'refs/heads/stable' }}
+        repo_token: ${{ github.token }}
+        title: ${{ steps.version.outputs.version }}
+        automatic_release_tag: ${{ steps.version.outputs.version }}
+        files: |
           target/stacker.jar

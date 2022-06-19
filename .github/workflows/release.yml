@@ -33,11 +33,11 @@ jobs:
         path: |
           target/stacker*.jar
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          prerelease: ${{ github.ref != 'refs/heads/stable' }}
-          repo_token: ${{ github.token }}
-          title: ${{ steps.version.outputs.version }}
-          automatic_release_tag: ${{ steps.version.outputs.version }}
-          files: |
-            target/stacker*.jar
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        prerelease: ${{ github.ref != 'refs/heads/stable' }}
+        repo_token: ${{ github.token }}
+        title: ${{ steps.version.outputs.version }}
+        automatic_release_tag: ${{ steps.version.outputs.version }}
+        files: |
+          target/stacker*.jar

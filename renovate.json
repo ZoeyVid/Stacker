@@ -7,5 +7,6 @@
     "stable"
   ],
   "includeForks": true,
-  "automerge": true
+  "automerge": true,
+  "branchPrefix": "renovate-deps-update-"
 }

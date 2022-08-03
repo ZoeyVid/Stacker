@@ -2,10 +2,8 @@
   "extends": [
     "config:base"
   ],
-  "baseBranches": [
-    "main",
-    "stable"
-  ],
+  "baseBranches": [],
   "includeForks": true,
-  "automerge": true
+  "automerge": true,
+  "branchPrefix": "renovate-deps-update-"
 }

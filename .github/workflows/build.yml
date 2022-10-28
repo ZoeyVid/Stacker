@@ -20,7 +20,7 @@ jobs:
 
     - name: Read .version file
       id: version
-      run: echo "::set-output name=version::$(cat .github/.version)"
+      run: echo "version=$(cat .github/.version)" >> $GITHUB_OUTPUT
 
     - name: Change config.yml if stable
       if: github.ref == 'refs/heads/stable' && github.event_name != 'pull_request'

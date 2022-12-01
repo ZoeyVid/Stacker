@@ -1,4 +1,4 @@
-package dev.sancraft.stacker.Listener;
+package de.zoeyvid.stacker.Listener;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

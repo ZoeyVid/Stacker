@@ -1,4 +1,4 @@
-# [Stacker](https://github.com/SanCraftDev/Stacker)
+# [Stacker](https://github.com/ZoeyVid/Stacker)
 
 A plugin to stack player above player! <br/>
 This plugin works with the Minecraft versions 1.11-1.19
@@ -15,18 +15,18 @@ This plugin works with the Minecraft versions 1.11-1.19
 
 ## Translate the Plugin
 
-[Read more here](https://github.com/SanCraftDev/Stacker/tree/main/languages/README.md)
+[Read more here](https://github.com/ZoeyVid/Stacker/tree/main/languages/README.md)
 
 ## The project is also on:
 
-[GitHub](https://github.com/SanCraftDev/Stacker) <br/>
+[GitHub](https://github.com/ZoeyVid/Stacker) <br/>
 [SpigotMC](https://www.spigotmc.org/resources/stacker.94586) <br/>
 [Curseforge](https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplugin) <br/>
 [(dev.bukkit.org)](https://dev.bukkit.org/projects/playerstackerplugin) <br/>
-[Jenkins (Ci)](https://ci.sancraft.dev/job/Stacker) <br>
-[Jenkins (Ci) - Dev-Version](https://ci.sancraft.dev/job/Stacker-Dev) <br>
-[Instant download](https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
-[Instant download Dev-Version](https://ci.sancraft.dev/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
+[Jenkins (Ci)](https://ci.zvcdn.de/job/Stacker) <br>
+[Jenkins (Ci) - Dev-Version](https://ci.zvcdn.de/job/Stacker-Dev) <br>
+[Instant download](https://ci.zvcdn.de/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
+[Instant download Dev-Version](https://ci.zvcdn.de/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
 
 # Security Policy
 
@@ -46,10 +46,10 @@ Bugs and feature ideas can be submitted in the issues!
   
 ## Contact us
 
-[Discord](https://sancraft.de/dc) (Main Language: German) (DavidCraft#2905) <br/>
-[Twitter](https://twitter.com/SanCraftDev) <br/>
-[GitHub](https://github.com/SanCraftDev) <br/>
+[Mastodon](https://social.zoeyvid.de/@ZoeyVid) <br/>
+[Twitter](https://twitter.com/ZoeyVid) <br/>
+[GitHub](https://github.com/ZoeyVid) <br/>
 
 ## License
 
-Mozilla Public License 2.0 Copyright © 2022 SanCraft
+Mozilla Public License 2.0 Copyright © 2022 ZoeyVid

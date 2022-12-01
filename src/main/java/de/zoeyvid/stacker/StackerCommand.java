@@ -1,4 +1,4 @@
-package dev.sancraft.stacker;
+package de.zoeyvid.stacker;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

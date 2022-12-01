@@ -1,9 +1,9 @@
-package dev.sancraft.stacker;
+package de.zoeyvid.stacker;
 
-import dev.sancraft.stacker.Listener.EntityInteractListener;
-import dev.sancraft.stacker.Listener.JoinListener;
-import dev.sancraft.stacker.Listener.QuitListener;
-import dev.sancraft.stacker.Listener.ShiftListener;
+import de.zoeyvid.stacker.Listener.EntityInteractListener;
+import de.zoeyvid.stacker.Listener.JoinListener;
+import de.zoeyvid.stacker.Listener.QuitListener;
+import de.zoeyvid.stacker.Listener.ShiftListener;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -86,13 +86,13 @@ public final class main extends JavaPlugin {
             Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Language file loaded! (" + loadConfig.language() + ")");
         } else {
             try {
-                FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/" + loadConfig.updateChannel() + "/languages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+                FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/" + loadConfig.updateChannel() + "/languages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
             } catch (Exception e) {
                 try {
-                    FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/" + loadConfig.updateChannel() + "/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+                    FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/" + loadConfig.updateChannel() + "/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
                 } catch (Exception e1) {
                     try {
-                        FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/Stable/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+                        FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/Stable/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
                     } catch (Exception e2) {
                         Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
                         Bukkit.getServer().getPluginManager().disablePlugin(this);
@@ -109,11 +109,11 @@ public final class main extends JavaPlugin {
                 if (loadConfig.updateChannel().equalsIgnoreCase("dev")) {
                     File oldFile = new File("plugins/stacker.jar");
                     if(oldFile.exists()) FileUtils.delete(oldFile);
-                    FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
+                    FileUtils.copyURLToFile(new URL("https://ci.zvcdn.de/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
                 } else {
                     File oldFile = new File("plugins/stacker.jar");
                     if(oldFile.exists()) FileUtils.delete(oldFile);
-                    FileUtils.copyURLToFile(new URL("https://ci.sancraft.dev/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
+                    FileUtils.copyURLToFile(new URL("https://ci.zvcdn.de/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
                 }
             } catch (Exception e) {
                 Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while updating the plugin!");
@@ -124,13 +124,13 @@ public final class main extends JavaPlugin {
     private void updateLanguage() {
         if (loadConfig.autoUpdateLanguage() && loadLanguage.getVersion() != langVersion) {
             try {
-                FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/" + loadConfig.updateChannel() + "/languages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+                FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/" + loadConfig.updateChannel() + "/languages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
             } catch (Exception e) {
                 try {
-                    FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/" + loadConfig.updateChannel() + "/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+                    FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/" + loadConfig.updateChannel() + "/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
                 } catch (Exception e1) {
                     try {
-                        FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/SanCraftDev/Stacker/Stable/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+                        FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/Stable/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
                     } catch (Exception e2) {
                         Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
                         Bukkit.getServer().getPluginManager().disablePlugin(this);

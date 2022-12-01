@@ -1,4 +1,4 @@
-package dev.sancraft.stacker;
+package de.zoeyvid.stacker;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

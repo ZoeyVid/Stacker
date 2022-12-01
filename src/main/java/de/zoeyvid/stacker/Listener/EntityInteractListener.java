@@ -1,8 +1,8 @@
-package dev.sancraft.stacker.Listener;
+package de.zoeyvid.stacker.Listener;
 
-import dev.sancraft.stacker.loadConfig;
-import dev.sancraft.stacker.loadLanguage;
-import dev.sancraft.stacker.main;
+import de.zoeyvid.stacker.loadConfig;
+import de.zoeyvid.stacker.loadLanguage;
+import de.zoeyvid.stacker.main;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

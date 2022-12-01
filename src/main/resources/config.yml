@@ -1,9 +1,9 @@
 # Stacker
 # A Plugin to Stack Player on the top of another Player
-# by DavidCraftDev for SanCraft
-# GitHub: https://github.com/SanCraftDev
-# Twitter: https://twitter.com/SanCraftDev
-# Discord: https://discord.gg/y8DhYhv427
+# by DavidCraftDev for ZoeyVid
+# GitHub: https://github.com/ZoeyVid
+# Mastodon: https://social.zoeyvid.de/@ZoeyVid
+# Twitter: https://twitter.com/ZoeyVid
 #
 # Should the stackmode enabled default on join?
 defaultOn: false
@@ -20,13 +20,13 @@ saveState: true
 # Should a Player be on join default immune?
 defaultImmune: false
 #
-# Language (Available Languages: https://github.com/SanCraftDev/Stacker/tree/master/languages)
+# Language (Available Languages: https://github.com/ZoeyVid/Stacker/tree/master/languages)
 languageFile: "en"
 #
 # Should the plugin automatically update?
 autoUpdate: true
 #
-# Update Channel (Available Channels: stable & dev) - Downloaded from our ci (https://ci.sancraft.dev)
+# Update Channel (Available Channels: stable & dev) - Downloaded from our ci (https://ci.zvcdn.de)
 updateChannel: "dev"
 #
 # Should the plugin automatically update the Language File? (This will delete your custom changes)

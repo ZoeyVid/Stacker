@@ -1,7 +1,7 @@
-package dev.sancraft.stacker.Listener;
+package de.zoeyvid.stacker.Listener;
 
-import dev.sancraft.stacker.loadConfig;
-import dev.sancraft.stacker.main;
+import de.zoeyvid.stacker.loadConfig;
+import de.zoeyvid.stacker.main;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

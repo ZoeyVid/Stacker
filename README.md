@@ -52,4 +52,4 @@ Bugs and feature ideas can be submitted in the issues!
 
 ## License
 
-Mozilla Public License 2.0 Copyright © 2022 ZoeyVid
+Mozilla Public License 2.0 Copyright © 2021-2023 ZoeyVid

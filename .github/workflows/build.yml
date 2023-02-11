@@ -11,12 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up JDK 16
+    - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
-        java-version: '16'
-        distribution: 'temurin'
-        cache: maven
+        java-version: 17
+        distribution: corretto
 
     - name: Read .version file
       id: version
@@ -24,14 +23,11 @@ jobs:
 
     - name: Change config.yml if stable
       if: github.ref == 'refs/heads/stable' && github.event_name != 'pull_request'
-      run: | 
-       sed -i 's/"dev"/"stable"/g' src/main/resources/config.yml
-       grep src/main/resources/config.yml -e "stable"
+      run: sed -i "s|\"dev\"|\"stable\"|g" src/main/resources/config.yml
 
     - name: Build with Maven
       run: | 
-       sed -i 's/0.0.0/${{ steps.version.outputs.version }}/g' pom.xml
-       grep pom.xml -e ${{ steps.version.outputs.version }}
+       sed -i "s|\"dev\"|\"stable\"|g" src/main/resources/config.yml
        mvn -B package --file pom.xml
        rm -rf target/original-*.jar
 

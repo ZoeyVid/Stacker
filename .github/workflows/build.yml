@@ -30,7 +30,7 @@ jobs:
           path: |
             target/stacker.jar
       - uses: "marvinpinto/action-automatic-releases@latest"
-        if: github.ref == 'refs/heads/stable' || github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/stable' || github.ref == 'refs/heads/main'
         with:
           prerelease: ${{ github.ref != 'refs/heads/stable' }}
           repo_token: ${{ github.token }}

@@ -13,7 +13,7 @@
 
     <description>A Plugin to Stack Player on the top of a other Player</description>
     <properties>
-        <java.version>16</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 

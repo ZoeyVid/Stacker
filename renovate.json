@@ -2,11 +2,12 @@
   "extends": [
     "config:base"
   ],
-  "baseBranches": [
-    "main",
-    "stable"
-  ],
+  "baseBranches": [],
   "includeForks": true,
-  "automerge": true,
-  "branchPrefix": "renovate-deps-update-"
+  "automerge": false,
+  "branchPrefix": "renovate-deps-update-",
+  "rangeStrategy": "pin",
+  "digest": {
+    "enabled": false
+  }
 }

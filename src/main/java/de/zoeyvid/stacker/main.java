@@ -1,9 +1,6 @@
 package de.zoeyvid.stacker;
 
-import de.zoeyvid.stacker.Listener.EntityInteractListener;
-import de.zoeyvid.stacker.Listener.JoinListener;
-import de.zoeyvid.stacker.Listener.QuitListener;
-import de.zoeyvid.stacker.Listener.ShiftListener;
+import de.zoeyvid.stacker.Listener.*;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -43,6 +40,7 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new QuitListener(), this);
         pluginManager.registerEvents(new EntityInteractListener(), this);
         pluginManager.registerEvents(new ShiftListener(), this);
+        pluginManager.registerEvents(new PlayerInteractListener(), this);
     }
 
     @Override

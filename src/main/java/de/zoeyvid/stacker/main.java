@@ -39,7 +39,7 @@ public final class main extends JavaPlugin {
         pluginManager.registerEvents(new JoinListener(), this);
         pluginManager.registerEvents(new QuitListener(), this);
         pluginManager.registerEvents(new EntityInteractListener(), this);
-        pluginManager.registerEvents(new ShiftListener(), this);
+        // pluginManager.registerEvents(new ShiftListener(), this);
         pluginManager.registerEvents(new PlayerInteractListener(), this);
     }
 

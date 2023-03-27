@@ -19,7 +19,7 @@ jobs:
       - name: Change config.yml if stable
         if: github.ref_name == 'stable' && github.event_name != 'pull_request'
         run: |
-          sed -i "s|updateChannel:.*|updateChannel: \"stable\"|g" src/main/resources/config.ymlversion=$(cat .github/.version)" >> $GITHUB_OUTPUT
+          sed -i "s|updateChannel:.*|updateChannel: \"stable\"|g" src/main/resources/config.yml
       - name: Change config.yml if dev
         if: github.ref_name == 'main' && github.event_name != 'pull_request'
         run: |

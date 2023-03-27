@@ -20,6 +20,9 @@ saveState: true
 # Should a Player be on join default immune?
 defaultImmune: false
 #
+# Should the stacked be are Player throwable?
+throwable: true
+#
 # Language (Available Languages: https://github.com/ZoeyVid/Stacker/tree/master/languages)
 languageFile: "en"
 #

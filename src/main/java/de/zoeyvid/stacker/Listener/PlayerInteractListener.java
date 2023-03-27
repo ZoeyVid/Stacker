@@ -1,5 +1,6 @@
 package de.zoeyvid.stacker.Listener;
 
+import de.zoeyvid.stacker.loadConfig;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,6 +13,7 @@ public class PlayerInteractListener implements Listener {
 
     @EventHandler
     public void onPlayerInteractListener(PlayerInteractEvent event) {
+        if(!loadConfig.throwable()) return;
         if (!(event.getAction() == Action.RIGHT_CLICK_AIR) && !(event.getAction() == Action.RIGHT_CLICK_BLOCK)) return;
         Player player = event.getPlayer();
         if(!(player.isSneaking())) return;

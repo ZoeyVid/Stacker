@@ -60,6 +60,16 @@ public class loadConfig {
         }
     }
 
+    public static boolean throwable() {
+        if (cfg.isBoolean("throwable")) {
+            return cfg.getBoolean("throwable");
+        } else {
+            cfg.set("throwable", true);
+            saveConfig();
+            return false;
+        }
+    }
+
     public static void readConfig() {
         cfg = YamlConfiguration.loadConfiguration(config);
     }

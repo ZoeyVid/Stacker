@@ -16,13 +16,13 @@ public class PlayerInteractListener implements Listener {
         if(!loadConfig.throwable()) return;
         if (!(event.getAction() == Action.RIGHT_CLICK_AIR) && !(event.getAction() == Action.RIGHT_CLICK_BLOCK)) return;
         Player player = event.getPlayer();
-        player.sendMessage("1")
+        player.sendMessage("1");
         if(!(player.isSneaking())) return;
-        player.sendMessage("2")
+        player.sendMessage("2");
         Entity passenger = player.getPassengers().get(0);
         passenger.eject();
         passenger.setVelocity(new Vector(0,1.5,0));
-        player.sendMessage("3")
+        player.sendMessage("3");
     }
 
 }

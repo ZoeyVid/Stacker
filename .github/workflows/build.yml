@@ -21,11 +21,11 @@ jobs:
         run: |
           sed -i "s|updateChannel:.*|updateChannel: \"stable\"|g" src/main/resources/config.yml
       - name: Change config.yml if dev
-        if: github.ref_name == 'main' && github.event_name != 'pull_request'
+        if: github.ref_name == 'dev' && github.event_name != 'pull_request'
         run: |
           sed -i "s|updateChannel:.*|updateChannel: \"dev\"|g" src/main/resources/config.yml
       - name: Change config.yml if stable/dev
-        if: github.ref_name == 'stable' || github.ref_name == 'main'
+        if: github.ref_name == 'stable' || github.ref_name == 'dev'
         run: |
           sed -i "s|autoUpdate:.*|autoUpdate: true|g" src/main/resources/config.yml
       - name: Build with Maven
@@ -39,7 +39,7 @@ jobs:
           path: |
             target/stacker.jar
       - uses: "marvinpinto/action-automatic-releases@latest"
-        if: github.ref == 'refs/heads/stable' || github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/stable' || github.ref == 'refs/heads/dev'
         with:
           prerelease: ${{ github.ref != 'refs/heads/stable' }}
           repo_token: ${{ github.token }}

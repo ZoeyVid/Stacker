@@ -21,7 +21,7 @@ jobs:
         run: |
           sed -i "s|updateChannel: \"stable\"|updateChannel: \"dev\"|g" src/main/resources/config.yml
       - name: Change config.yml if stable/dev
-        if: github.ref == 'refs/heads/stable' && github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/stable' || github.ref == 'refs/heads/main'
         run: |
           sed -i "s|autoUpdate: false|autoUpdate: true|g" src/main/resources/config.yml
       - name: Build with Maven

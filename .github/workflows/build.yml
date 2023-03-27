@@ -19,11 +19,15 @@ jobs:
       - name: Change config.yml if stable
         if: github.ref_name == 'stable' && github.event_name != 'pull_request'
         run: |
-          sed -i "s|updateChannel: \"dev\"|updateChannel: \"stable\"|g" src/main/resources/config.yml
+          sed -i "s|updateChannel:.*|updateChannel: \"stable\"|g" src/main/resources/config.ymlversion=$(cat .github/.version)" >> $GITHUB_OUTPUT
+      - name: Change config.yml if dev
+        if: github.ref_name == 'main' && github.event_name != 'pull_request'
+        run: |
+          sed -i "s|updateChannel:.*|updateChannel: \"dev\"|g" src/main/resources/config.yml
       - name: Change config.yml if stable/dev
         if: github.ref_name == 'stable' || github.ref_name == 'main'
         run: |
-          sed -i "s|autoUpdate: false|autoUpdate: true|g" src/main/resources/config.yml
+          sed -i "s|autoUpdate:.*|autoUpdate: true|g" src/main/resources/config.yml
       - name: Build with Maven
         run: |
           sed -i "s|0.0.0|"$(cat .github/.version)"|g" pom.xml

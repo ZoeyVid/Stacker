@@ -8,13 +8,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.util.Vector;
 
 public class EntityInteractListener implements Listener {
 
     @EventHandler
     public void onEntityInteract(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
-        player.sendMessage("PlayerInteractEntityEvent");
+        player.setVelocity(new Vector(0,1.5,0));
         if (event.getRightClicked() instanceof Player && main.getStackmode().contains(player)) {
             Player target = (Player) event.getRightClicked();
             if (main.getDisabled().contains(target)) {

@@ -14,6 +14,7 @@ public class EntityInteractListener implements Listener {
     @EventHandler
     public void onEntityInteract(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
+        player.sendMessage("PlayerInteractEntityEvent");
         if (event.getRightClicked() instanceof Player && main.getStackmode().contains(player)) {
             Player target = (Player) event.getRightClicked();
             if (main.getDisabled().contains(target)) {

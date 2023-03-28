@@ -13,9 +13,10 @@ public class PlayerInteractListener implements Listener {
 
     @EventHandler
     public void onPlayerInteractListener(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
+        player.sendMessage("PlayerInteractEvent");
         if(!loadConfig.throwable()) return;
         if (!(event.getAction() == Action.RIGHT_CLICK_AIR) && !(event.getAction() == Action.RIGHT_CLICK_BLOCK)) return;
-        Player player = event.getPlayer();
         player.sendMessage("1");
         if(!(player.isSneaking())) return;
         player.sendMessage("2");

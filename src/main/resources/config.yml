@@ -27,7 +27,7 @@ throwable: true
 languageFile: "en"
 #
 # Should the plugin automatically update?
-autoUpdate: true
+autoUpdate: false
 #
 # Update Channel (Available Channels: stable & dev) - Downloaded from our ci (https://ci.zvcdn.de)
 updateChannel: "dev"

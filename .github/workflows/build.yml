@@ -42,6 +42,7 @@ jobs:
         if: github.ref == 'refs/heads/stable'
         with:
           version-type: release
+          modrinth-featured: true
           github-prerelease: ${{ github.ref != 'refs/heads/stable' }}
           name: v${{ steps.version.outputs.version }}
           version: ${{ steps.version.outputs.version }}
@@ -96,6 +97,7 @@ jobs:
         if: github.ref == 'refs/heads/dev'
         with:
           version-type: beta
+          modrinth-featured: false
           github-prerelease: ${{ github.ref != 'refs/heads/stable' }}
           name: v${{ steps.version.outputs.version }}
           version: ${{ steps.version.outputs.version }}

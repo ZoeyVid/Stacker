@@ -26,6 +26,7 @@ public class EntityInteractListener implements Listener {
                     ArmorStand placeholder = player.getWorld().spawn(player.getLocation(), ArmorStand.class);
                     placeholder.setVisible(false);
                     placeholder.setSmall(true);
+                    placeholder.setRemoveWhenFarAway(true);
                     placeholder.addPassenger(target);
                     player.addPassenger(placeholder);
                 }

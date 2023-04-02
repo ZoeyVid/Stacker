@@ -11,7 +11,7 @@ public class ShiftListener implements Listener {
     public void onShift(PlayerToggleSneakEvent event) {
         Player player = event.getPlayer();
         if (!player.getPassengers().equals(null)) {
-            player.eject();
+            player.getPassengers().get(0).remove();
         }
     }
 

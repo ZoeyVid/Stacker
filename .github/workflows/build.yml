@@ -38,12 +38,113 @@ jobs:
           name: artifacts
           path: |
             target/stacker.jar
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        if: github.ref == 'refs/heads/stable' || github.ref == 'refs/heads/dev'
+      - uses: Kir-Antipov/mc-publish@v3.2
+        if: github.ref == 'refs/heads/stable'
         with:
-          prerelease: ${{ github.ref != 'refs/heads/stable' }}
-          repo_token: ${{ github.token }}
-          title: ${{ steps.version.outputs.version }}
-          automatic_release_tag: ${{ steps.version.outputs.version }}
-          files: |
-            target/stacker.jar
+          version-type: release
+          modrinth-featured: true
+          github-prerelease: ${{ github.ref != 'refs/heads/stable' }}
+          name: v${{ steps.version.outputs.version }}
+          version: ${{ steps.version.outputs.version }}
+          github-tag: v${{ steps.version.outputs.version }}
+          files-primary: target/stacker.jar
+          java: |
+            17
+          loaders: |
+            spigot
+            paper
+            purpur
+          game-versions: |
+             1.11
+             1.11.1
+             1.11.2
+             1.12
+             1.12.1
+             1.12.2
+             1.13
+             1.13.1
+             1.13.2
+             1.14
+             1.14.1
+             1.14.2
+             1.14.3
+             1.14.4
+             1.15
+             1.15.1
+             1.15.2
+             1.16
+             1.16.1
+             1.16.2
+             1.16.3
+             1.16.4
+             1.16.5
+             1.17
+             1.17.1
+             1.18
+             1.18.1
+             1.18.2
+             1.19
+             1.19.1
+             1.19.2
+             1.19.3
+             1.19.4
+          modrinth-id: Ffx1tA97
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+#          curseforge-id: 507466
+#          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}     
+      - uses: Kir-Antipov/mc-publish@v3.2
+        if: github.ref == 'refs/heads/dev'
+        with:
+          version-type: beta
+          modrinth-featured: false
+          github-prerelease: ${{ github.ref != 'refs/heads/stable' }}
+          name: v${{ steps.version.outputs.version }}
+          version: ${{ steps.version.outputs.version }}
+          github-tag: v${{ steps.version.outputs.version }}
+          files-primary: target/stacker.jar
+          java: |
+            17
+          loaders: |
+            spigot
+            paper
+            purpur
+          game-versions: |
+             1.11
+             1.11.1
+             1.11.2
+             1.12
+             1.12.1
+             1.12.2
+             1.13
+             1.13.1
+             1.13.2
+             1.14
+             1.14.1
+             1.14.2
+             1.14.3
+             1.14.4
+             1.15
+             1.15.1
+             1.15.2
+             1.16
+             1.16.1
+             1.16.2
+             1.16.3
+             1.16.4
+             1.16.5
+             1.17
+             1.17.1
+             1.18
+             1.18.1
+             1.18.2
+             1.19
+             1.19.1
+             1.19.2
+             1.19.3
+             1.19.4
+          modrinth-id: Ffx1tA97
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+#          curseforge-id: 507466
+#          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -16,9 +16,6 @@ public class EntityInteractListener implements Listener {
     @EventHandler
     public void onEntityInteract(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
-        Player passenger = (Player) player.getPassengers().get(0);
-        passenger.eject();
-        passenger.setVelocity(new Vector(0,1.5,0));
         if (event.getRightClicked() instanceof Player && main.getStackmode().contains(player)) {
             Player target = (Player) event.getRightClicked();
             if (main.getDisabled().contains(target)) {
@@ -30,6 +27,10 @@ public class EntityInteractListener implements Listener {
                     player.addPassenger(target);
                 }
             }
+        }
+        if(!(player.getPassengers().isEmpty())) {
+            Player passenger = (Player) player.getPassengers().get(0);
+            passenger.setVelocity(new Vector(0, 2, 0));
         }
     }
 }

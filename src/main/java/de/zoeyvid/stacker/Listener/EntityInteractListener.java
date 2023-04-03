@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.util.Vector;
 
 public class EntityInteractListener implements Listener {
 
@@ -23,12 +24,14 @@ public class EntityInteractListener implements Listener {
                 }
             } else {
                 if (player.getWorld().getPlayers().contains(target)) {
-                    ArmorStand placeholder = player.getWorld().spawn(player.getLocation(), ArmorStand.class);
+                    /**ArmorStand placeholder = player.getWorld().spawn(player.getLocation(), ArmorStand.class);
                     placeholder.setVisible(false);
                     placeholder.setSmall(true);
                     placeholder.setRemoveWhenFarAway(true);
-                    placeholder.addPassenger(target);
-                    player.addPassenger(placeholder);
+                    placeholder.addPassenger(target);**/
+                    player.addPassenger(target);
+                    Vector offset = new Vector(0, 2, 0);
+                    target.teleport(player.getLocation().add(offset));
                 }
             }
         }

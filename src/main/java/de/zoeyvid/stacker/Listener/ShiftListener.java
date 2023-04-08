@@ -1,5 +1,7 @@
 package de.zoeyvid.stacker.Listener;
 
+import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,6 +13,10 @@ public class ShiftListener implements Listener {
     public void onShift(PlayerToggleSneakEvent event) {
         Player player = event.getPlayer();
         player.eject();
+        for(Entity e : player.getWorld().getEntities()) {
+            if(!(e instanceof ArmorStand)) return;
+            e.getScoreboardTags().contains("Stacker_Placeholder");
+        }
     }
 
 }

@@ -24,14 +24,13 @@ public class EntityInteractListener implements Listener {
                 }
             } else {
                 if (player.getWorld().getPlayers().contains(target)) {
-                    /**ArmorStand placeholder = player.getWorld().spawn(player.getLocation(), ArmorStand.class);
+                    ArmorStand placeholder = player.getWorld().spawn(player.getLocation(), ArmorStand.class);
                     placeholder.setVisible(false);
                     placeholder.setSmall(true);
                     placeholder.setRemoveWhenFarAway(true);
-                    placeholder.addPassenger(target);**/
-                    player.addPassenger(target);
-                    Vector offset = new Vector(0, 2, 0);
-                    target.teleport(player.getLocation().add(offset));
+                    placeholder.addScoreboardTag("Stacker_Placeholder");
+                    placeholder.addPassenger(target);
+                    player.addPassenger(placeholder);
                 }
             }
         }

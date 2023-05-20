@@ -47,7 +47,8 @@ jobs:
           name: v${{ steps.version.outputs.version }}
           version: ${{ steps.version.outputs.version }}
           github-tag: v${{ steps.version.outputs.version }}
-          files: target/stacker.jar
+          files: |
+            target/stacker.jar
           java: |
             17
           loaders: |

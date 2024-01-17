@@ -39,7 +39,7 @@ jobs:
           path: |
             target/stacker.jar
       - uses: Kir-Antipov/mc-publish@v3.3
-        if: github.ref == 'refs/heads/stable'
+        if: github.ref_name == 'stable'
         with:
           version-type: release
           modrinth-featured: true
@@ -55,14 +55,14 @@ jobs:
             paper
             purpur
           game-versions: |
-            >=1.11 <=1.19.4
+            >=1.11 <=1.20.4
           modrinth-id: Ffx1tA97
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           curseforge-id: 507466
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}     
       - uses: Kir-Antipov/mc-publish@v3.3
-        if: github.ref == 'refs/heads/dev'
+        if: github.ref_name == 'dev'
         with:
           version-type: beta
           modrinth-featured: false
@@ -78,7 +78,7 @@ jobs:
             paper
             purpur
           game-versions: |
-            >=1.11 <=1.19.4
+            >=1.11 <=1.20.4
           modrinth-id: Ffx1tA97
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           curseforge-id: 507466

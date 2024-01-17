@@ -19,11 +19,11 @@ jobs:
       - name: Change config.yml if stable
         if: github.ref_name == 'stable' && github.event_name != 'pull_request'
         run: |
-          sed -i "s|updateChannel:.*|updateChannel: \"stable\"|g" src/main/resources/config.yml
+          sed -i "s|updateChannel:.*|updateChannel: stable|g" src/main/resources/config.yml
       - name: Change config.yml if dev
         if: github.ref_name == 'dev' && github.event_name != 'pull_request'
         run: |
-          sed -i "s|updateChannel:.*|updateChannel: \"dev\"|g" src/main/resources/config.yml
+          sed -i "s|updateChannel:.*|updateChannel: dev|g" src/main/resources/config.yml
       - name: Change config.yml if stable/dev
         if: github.ref_name == 'stable' || github.ref_name == 'dev'
         run: |
@@ -60,7 +60,7 @@ jobs:
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           curseforge-id: 507466
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}     
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: Kir-Antipov/mc-publish@v3.3
         if: github.ref_name == 'dev'
         with:

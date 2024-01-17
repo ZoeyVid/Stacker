@@ -1,7 +1,7 @@
 name: Stacker
 version: ${project.version}
 main: de.zoeyvid.stacker.main
-authors: [ DavidCraftDev ]
+authors: [DavidCraftDev]
 description: A Plugin to Stack Player on the top of a other Player
 folia-supported: true
 

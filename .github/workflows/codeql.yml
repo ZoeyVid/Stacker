@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: ["main"]
   schedule:
-    - cron: '21 3 * * 6'
+    - cron: "21 3 * * 6"
 jobs:
   analyze:
     name: Analyze
@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['java']
+        language: ["java"]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

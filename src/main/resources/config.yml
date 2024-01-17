@@ -6,7 +6,7 @@
 # Twitter: https://twitter.com/ZoeyVid
 #
 # Should the stackmode enabled default on join?
-defaultOn: false
+defaultOn: true
 #
 # Should a message be shown when a player a not stackable?
 showMessage: true
@@ -18,16 +18,22 @@ sendMessage: true
 saveState: true
 #
 # Should a Player be on join default immune?
-defaultImmune: false
+defaultImmune: true
 #
-# Language (Available Languages: https://github.com/ZoeyVid/Stacker/tree/master/languages)
-languageFile: "en"
+# Should the stacked players be throwable?
+throwable: true
+#
+# Should the thrown players get fall damage?
+throwfalldamage: false
+#
+# Language (Available Languages: https://github.com/ZoeyVid/Stacker/tree/stable/languages)
+languageFile: en
 #
 # Should the plugin automatically update?
 autoUpdate: false
 #
 # Update Channel (Available Channels: stable & dev) - Downloaded from our ci (https://ci.zvcdn.de)
-updateChannel: "dev"
+updateChannel: dev
 #
 # Should the plugin automatically update the Language File? (This will delete your custom changes)
 autoUpdateLanguage: true

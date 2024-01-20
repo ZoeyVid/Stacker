@@ -54,7 +54,7 @@ public class loadConfig {
     if (cfg.isBoolean("defaultImmune")) {
       return cfg.getBoolean("defaultImmune");
     } else {
-      cfg.set("defaultImmune", true);
+      cfg.set("defaultImmune", false);
       saveConfig();
       return cfg.getBoolean("defaultImmune");
     }

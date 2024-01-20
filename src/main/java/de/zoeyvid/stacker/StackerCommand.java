@@ -49,7 +49,7 @@ public class StackerCommand implements CommandExecutor, TabCompleter {
       } else if (args[0].equalsIgnoreCase("help")) {
         if (player.hasPermission("stacker.help")) {
           player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.helpTitle());
-          player.sendMessage(main.getPrefix() + ChatColor.YELLOW + "/stacker " + ChatColor.WHITE + loadLanguage.helpNormal());
+          player.sendMessage(main.getPrefix() + ChatColor.YELLOW + "/stacker " + ChatColor.WHITE + loadLanguage.helpImmune());
           player.sendMessage(main.getPrefix() + ChatColor.YELLOW + "/stacker toggle/enable/disable <player>" + ChatColor.WHITE + loadLanguage.helpToggle());
           player.sendMessage(main.getPrefix() + ChatColor.YELLOW + "/stacker immune <player>" + ChatColor.WHITE + loadLanguage.helpImmune());
           player.sendMessage(main.getPrefix() + ChatColor.YELLOW + "/stacker help" + ChatColor.WHITE + loadLanguage.helpHelp());

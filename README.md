@@ -15,7 +15,7 @@ This plugin works with the Minecraft versions 1.11-1.20
 
 ## Translate the Plugin
 
-[Read more here](https://github.com/ZoeyVid/Stacker/tree/main/languages/README.md)
+[Read more here](https://github.com/ZoeyVid/Stacker/tree/stable/languages/README.md)
 
 ## The project is also on:
 

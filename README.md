@@ -43,7 +43,7 @@ This Minecraft versions a currently supported
 
 ## Reporting a Bug or suggest a feature
 
-Bugs and feature ideas can be submitted in the issues!
+Bugs and feature ideas can be submitted in the [issues](https://github.com/ZoeyVid/Stacker/issues)!
 
 ## Contact us
 

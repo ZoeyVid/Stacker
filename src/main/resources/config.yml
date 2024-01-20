@@ -18,7 +18,7 @@ sendMessage: true
 saveState: true
 #
 # Should a Player be on join default immune?
-defaultImmune: true
+defaultImmune: false
 #
 # Should the stacked players be throwable?
 throwable: true

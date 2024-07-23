@@ -6,7 +6,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 public class ShiftListener implements Listener {
-
   @EventHandler
   public void onShift(PlayerToggleSneakEvent event) {
     Player player = event.getPlayer();

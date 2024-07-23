@@ -5,7 +5,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public class loadLanguage {
-
   private static final File language = new File("plugins/Stacker/language", loadConfig.language() + ".yml");
   private static FileConfiguration lang;
 
@@ -71,19 +70,9 @@ public class loadLanguage {
     if (lang.isString("helpHelp")) {
       return lang.getString("helpHelp");
     } else {
-      lang.addDefault("helpHelp", "Shows this Help");
+      lang.addDefault("helpHelp", " Shows this Help");
       saveLanguage();
-      return "Shows this Help";
-    }
-  }
-
-  public static String helpNormal() {
-    if (lang.isString("helpNormal")) {
-      return lang.getString("helpNormal");
-    } else {
-      lang.addDefault("helpNormal", " Toggle the stackmode");
-      saveLanguage();
-      return " Toggle the stackmode";
+      return " Shows this Help";
     }
   }
 

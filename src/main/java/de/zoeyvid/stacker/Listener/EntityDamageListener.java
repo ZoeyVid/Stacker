@@ -9,7 +9,6 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 public class EntityDamageListener implements Listener {
-
   @EventHandler
   public void onEntityDamage(EntityDamageEvent event) {
     if (loadConfig.throwfalldamage()) return;

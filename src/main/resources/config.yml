@@ -1,9 +1,8 @@
 # Stacker
 # A Plugin to Stack Player on the top of another Player
-# by DavidCraftDev for ZoeyVid
+# by ZoeyVid
 # GitHub: https://github.com/ZoeyVid
 # Mastodon: https://social.zoeyvid.de/@ZoeyVid
-# Twitter: https://twitter.com/ZoeyVid
 #
 # Should the stackmode enabled default on join?
 defaultOn: true
@@ -29,11 +28,8 @@ throwfalldamage: false
 # Language (Available Languages: https://github.com/ZoeyVid/Stacker/tree/stable/languages)
 languageFile: en
 #
-# Should the plugin automatically update?
-autoUpdate: false
-#
-# Update Channel (Available Channels: stable & dev) - Downloaded from our ci (https://ci.zvcdn.de)
-updateChannel: dev
-#
 # Should the plugin automatically update the Language File? (This will delete your custom changes)
 autoUpdateLanguage: true
+#
+# Should the plugin automatically update? the updated file will be saved to plugins/Stacker.jar
+autoUpdate: false

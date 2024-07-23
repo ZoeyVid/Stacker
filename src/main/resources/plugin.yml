@@ -1,36 +1,68 @@
 name: Stacker
 version: ${project.version}
 main: de.zoeyvid.stacker.main
-authors: [DavidCraftDev, Zoey2936]
-description: A Plugin to Stack Player on the top of a other Player
+description: a plugin to stack a player on the top of an other player
+author: ZoeyVid
+authors: [ZoeyVid, DavidCraftDev, Zoey2936]
+website: https://github.com/ZoeyVid/Stacker
+api-version: '1.13'
 folia-supported: true
 
 commands:
   stacker:
-    aliases: str
-    description: A Command to enable and disable the Stackermode!
+    description: a command to manage the Stacker plugin
+    permission: stacker.command
+    usage: |
+      /stacker [help] - view a help menu
+      /stacker immune - toggle yourself the possibility of being stacked by others
+      /stacker immune <player> - toggle for others the possibility of being stacked by others
+      /stacker toggle - toggle yourself the ability to stack others
+      /stacker toggle <player> - toggle for others the ability to stack others
 
-  permissions:
-    stacker.*:
-      description: Gives access to all Stacker functions
-      children:
-        stacker.help: true
-        stacker.use.self: true
-        stacker.use.other: true
-        stacker.immune.self: true
-        stacker.immune.other: true
-    stacker.help:
-      description: Allows to use /stacker help
-      default: true
-    stacker.use.self:
-      description: Allows to enable Stackmode for your seld
-      default: op
-    stacker.use.other:
-      description: Allows to enable Stackmode for another Player
-      default: op
-    stacker.immune.self:
-      description: Allows to make his self Immune
-      default: op
-    stacker.immune.other:
-      description: Allows you make other Players Immune
-      default: op
+permissions:
+  stacker.*:
+    description: the stacker permission gives all sub permissions
+    children:
+      stacker.command: true
+      stacker.help: true
+      stacker.immune: true
+      stacker.immune.self: true
+      stacker.immune.other: true
+      stacker.use: true
+      stacker.use.self: true
+      stacker.use.other: true
+  stacker.command:
+    description: if denied it should block all stacker commands
+    default: true
+  stacker.help:
+    description: allows to use /stacker help
+    default: true
+  stacker.immune:
+    description: allows to make yourself immune and allows yourself to make others immune
+    default: op
+    children:
+      stacker.immune.self: true
+      stacker.immune.other: true
+  stacker.immune.self:
+    description: allows to make yourself immune
+    default: true
+  stacker.immune.other:
+    description: allows yourself to make others immune
+    default: op
+    children:
+      stacker.immune.self: true
+  stacker.use:
+    description: allows yourself to stack others which are not immune and allows yourself to allow others to stack others which are not immune
+    default: op
+    children:
+      stacker.use.self: true
+      stacker.use.other: true
+  stacker.use.self:
+    description: allows yourself to stack others which are not immune
+    default: true
+  stacker.use.other:
+    description: allows yourself to allow others to stack others which are not immune
+    default: op
+    children:
+      stacker.use.self: true
+default-permission: op

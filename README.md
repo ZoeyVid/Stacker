@@ -1,17 +1,24 @@
 # [Stacker](https://github.com/ZoeyVid/Stacker)
 
 A plugin to stack player above player (and throw them)! <br/>
-This plugin works with the Minecraft versions 1.11-1.20
+This plugin works with the Minecraft versions 1.13-1.21 <br/>
 
 ## Commands & Permissions
 
-**Command - Description - Needed Permission** <br/>
-/stacker - Enable or disable the immune mode for your self - stacker.immune.self <br/>
-/stacker toggle/enable/disable - Also toggle stackermode - stacker.use.self <br/>
-/stacker toggle/enable/disable <player> - Toggle stackmode for another player - stacker.use.other <br/>
-/stacker immune - Enable or disable the immune mode for your self - stacker.immune.self <br/>
-/stacker immune <player> - Enable or disable the immune mode for another player - stacker.immune.other <br/>
-/stacker help - View a help menu - stacker.help <br/>
+| **Command** | **Description** | **Needed Permission** | **Default** |
+| ----------- | --------------- | --------------------- | ----------- |
+| `/stacker [help]` | view a help menu | `stacker.help` | all |
+| `/stacker immune` | toggle yourself the possibility of being stacked by others | `stacker.immune.self` | all |
+| `/stacker immune <player>` | toggle for others the possibility of being stacked by others | `stacker.immune.other` | op |
+| `/stacker toggle` | toggle yourself the ability to stack others | `stacker.use.self` | all |
+| `/stacker toggle <player>` | toggle for others the ability to stack others | `stacker.use.other` | op |
+
+- The `stacker` permission gives all permissions.
+- The `stacker.immune` permission gives all permissions which start with `stacker.immune.`.
+- The `stacker.immune.other` permission includes `stacker.immune.self`.
+- The `stacker.use` permission gives all permissions which start with `stacker.use.`.
+- The `stacker.use.other` permission includes `stacker.use.self`.
+- Removing the `stacker.command` permission can be used to fully disable the `/stacker` command.
 
 ## Translate the Plugin
 
@@ -22,34 +29,25 @@ This plugin works with the Minecraft versions 1.11-1.20
 [GitHub](https://github.com/ZoeyVid/Stacker) <br/>
 [Modrinth](https://modrinth.com/plugin/stacker-plugin) <br/>
 [SpigotMC](https://www.spigotmc.org/resources/stacker.94586) <br/>
+[Hangar](https://hangar.papermc.io/ZoeyVid/Stacker) <br/>
 [Curseforge](https://www.curseforge.com/minecraft/bukkit-plugins/playerstackerplugin) <br/>
 [(dev.bukkit.org)](https://dev.bukkit.org/projects/playerstackerplugin) <br/>
-[Jenkins (Ci)](https://ci.zvcdn.de/job/Stacker) <br>
-[Jenkins (Ci) - Dev-Version](https://ci.zvcdn.de/job/Stacker-Dev) <br>
-[Instant download](https://ci.zvcdn.de/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
-[Instant download Dev-Version](https://ci.zvcdn.de/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker.jar) <br>
-
-# Security Policy
+[Instant download from GitHub](https://github.com/ZoeyVid/Stacker/releases/latest/Stacker.jar) <br>
 
 ## Supported Versions
 
-This Minecraft versions a currently supported
+This Minecraft versions are currently supported
 
-| Version       | Supported |
-| ------------- | --------- |
-| => 1.11.2     | ✅        |
-| = 1.11/1.11.1 | ❔        |
-| =< 1.10.2     | ❌        |
+| Version    | Supported |
+| ---------- | --------- |
+| >= 1.13    | ✅        |
+| < 1.13     | ❌        |
 
-## Reporting a Bug or suggest a feature
+## Reporting bugs, suggesting features and getting help
 
-Bugs and feature ideas can be submitted in the [issues](https://github.com/ZoeyVid/Stacker/issues)!
-
-## Contact us
-
-[Mastodon](https://social.zoeyvid.de/@ZoeyVid) <br/>
-[Twitter](https://twitter.com/ZoeyVid) <br/>
-[GitHub](https://github.com/ZoeyVid) <br/>
+1. [Support/Questions](https://github.com/ZoeyVid/Stacker/discussions) (preferred)
+2. [Discord](https://discord.gg/y8DhYhv427) (only in the #support forum channel, keep other channels free from Stacker)
+3. [Bugs](https://github.com/ZoeyVid/Stacker/issues) (only for feature requests and reproducible bugs)
 
 ## License
 

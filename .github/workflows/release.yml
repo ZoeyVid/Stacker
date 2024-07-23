@@ -1,0 +1,57 @@
+name: Release
+on:
+  push:
+    branches:
+      - stable
+    paths:
+      - .version
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up JDK 8
+        uses: actions/setup-java@v5
+        with:
+          java-version: 8
+          distribution: corretto
+      - name: Read .version file
+        id: version
+        run: echo "version=$(cat .version)" >> $GITHUB_OUTPUT
+      - name: Build with Maven
+        run: |
+          sed -i "s|0.0.0|"$(cat .version)"|g" pom.xml
+          mvn -B package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: artifacts
+          path: |
+            target/Stacker.jar
+      - uses: Kir-Antipov/mc-publish@v3.3
+        if: github.ref_name == 'stable'
+        with:
+          version-type: release
+          modrinth-featured: true
+          github-prerelease: false
+          name: v${{ steps.version.outputs.version }}
+          version: ${{ steps.version.outputs.version }}
+          github-tag: ${{ steps.version.outputs.version }}
+          files: target/Stacker.jar
+          java: |
+            1.8
+            11
+            16
+            17
+            21
+          loaders: |
+            spigot
+            paper
+            purpur
+          game-versions: |
+            >=1.13
+          modrinth-id: Ffx1tA97
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          curseforge-id: 507466
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

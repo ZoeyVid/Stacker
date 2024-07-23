@@ -2,10 +2,11 @@ package de.zoeyvid.stacker;
 
 import de.zoeyvid.stacker.Listener.*;
 import java.io.File;
-import java.net.URL;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -15,12 +16,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
 public final class main extends JavaPlugin {
-
   private static final String prefix = ChatColor.GRAY + "[" + ChatColor.AQUA + "Stacker" + ChatColor.GRAY + "] ";
-  private static final ArrayList stackmode = new ArrayList<Player>();
-  private static final ArrayList disabled = new ArrayList<Player>();
-  private static final ArrayList thrown = new ArrayList<Player>();
-  private static final HashMap<Player, Vector> velocity = new HashMap<Player, Vector>();
+  private static final ArrayList<Player> stackmode = new ArrayList<>();
+  private static final ArrayList<Player> disabled = new ArrayList<>();
+  private static final ArrayList<Player> thrown = new ArrayList<>();
+  private static final HashMap<Player, Vector> velocity = new HashMap<>();
   private final int langVersion = 2;
   private FileConfiguration cfg;
   private FileConfiguration lang;
@@ -29,15 +29,15 @@ public final class main extends JavaPlugin {
     return prefix;
   }
 
-  public static ArrayList getStackmode() {
+  public static ArrayList<Player> getStackmode() {
     return stackmode;
   }
 
-  public static ArrayList getDisabled() {
+  public static ArrayList<Player> getDisabled() {
     return disabled;
   }
 
-  public static ArrayList getThrown() {
+  public static ArrayList<Player> getThrown() {
     return thrown;
   }
 
@@ -73,6 +73,10 @@ public final class main extends JavaPlugin {
   }
 
   private void loadConfig() {
+    File langDir = new File("plugins/Stacker");
+    if (!langDir.exists()) {
+      langDir.mkdirs();
+    }
     if ((new File("plugins/Stacker/config.yml")).exists()) {
       cfg = getConfig();
       cfg.options().copyDefaults(true);
@@ -87,7 +91,7 @@ public final class main extends JavaPlugin {
   }
 
   private void loadLanguages() {
-    File langDir = new File("plugins/Stacker");
+    File langDir = new File("plugins/Stacker/language");
     if (!langDir.exists()) {
       langDir.mkdirs();
     }
@@ -97,60 +101,44 @@ public final class main extends JavaPlugin {
       Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Language file loaded! (" + loadConfig.language() + ")");
     } else {
       try {
-        FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/" + loadConfig.updateChannel() + "/languages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+        Files.copy(new URI("https://raw.githubusercontent.com/ZoeyVid/Stacker/stable/languages/" + loadConfig.language() + ".yml").toURL().openStream(), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml").toPath(), StandardCopyOption.REPLACE_EXISTING);
       } catch (Exception e) {
         try {
-          FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/" + loadConfig.updateChannel() + "/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+          Files.copy(new URI("https://raw.githubusercontent.com/ZoeyVid/Stacker/stable/languages/en.yml").toURL().openStream(), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml").toPath(), StandardCopyOption.REPLACE_EXISTING);
         } catch (Exception e1) {
-          try {
-            FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/stable/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
-          } catch (Exception e2) {
-            Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
-            Bukkit.getServer().getPluginManager().disablePlugin(this);
-          }
+          Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
+          Bukkit.getServer().getPluginManager().disablePlugin(this);
         }
       }
     }
     loadLanguage.readLanguage();
   }
 
-  private void updatePlugin() {
-    if (loadConfig.autoUpdate()) {
-      try {
-        if (loadConfig.updateChannel().equalsIgnoreCase("dev")) {
-          File oldFile = new File("plugins/stacker.jar");
-          if (oldFile.exists()) FileUtils.delete(oldFile);
-          FileUtils.copyURLToFile(new URL("https://ci.zvcdn.de/job/Stacker-Dev/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
-        } else {
-          File oldFile = new File("plugins/stacker.jar");
-          if (oldFile.exists()) FileUtils.delete(oldFile);
-          FileUtils.copyURLToFile(new URL("https://ci.zvcdn.de/job/Stacker/lastSuccessfulBuild/artifact/target/stacker.jar"), new File("plugins/stacker.jar"));
-        }
-      } catch (Exception e) {
-        Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while updating the plugin!");
-      }
-    }
-  }
-
   private void updateLanguage() {
     if (loadConfig.autoUpdateLanguage() && loadLanguage.getVersion() != langVersion) {
       try {
-        FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/" + loadConfig.updateChannel() + "/languages/" + loadConfig.language() + ".yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+        Files.copy(new URI("https://raw.githubusercontent.com/ZoeyVid/Stacker/stable/languages/" + loadConfig.language() + ".yml").toURL().openStream(), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml").toPath(), StandardCopyOption.REPLACE_EXISTING);
       } catch (Exception e) {
         try {
-          FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/" + loadConfig.updateChannel() + "/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
+          Files.copy(new URI("https://raw.githubusercontent.com/ZoeyVid/Stacker/stable/languages/en.yml").toURL().openStream(), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml").toPath(), StandardCopyOption.REPLACE_EXISTING);
         } catch (Exception e1) {
-          try {
-            FileUtils.copyURLToFile(new URL("https://raw.githubusercontent.com/ZoeyVid/Stacker/stable/languages/en.yml"), new File("plugins/Stacker/language/" + loadConfig.language() + ".yml"));
-          } catch (Exception e2) {
-            Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
-            Bukkit.getServer().getPluginManager().disablePlugin(this);
-          }
+          Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while downloading language file!");
+          Bukkit.getServer().getPluginManager().disablePlugin(this);
         }
       }
       Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Language file updated! (" + loadConfig.language() + ", " + loadLanguage.getVersion() + " -> " + langVersion + ")");
       loadLanguages();
       loadLanguage.readLanguage();
+    }
+  }
+
+  private void updatePlugin() {
+    if (loadConfig.autoUpdate()) {
+      try {
+        Files.copy(new URI("https://github.com/ZoeyVid/Stacker/releases/latest/download/Stacker.jar").toURL().openStream(), new File("plugins/stacker.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
+      } catch (Exception e) {
+        Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while updating the plugin!");
+      }
     }
   }
 

@@ -6,7 +6,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public class loadConfig {
-
   private static final File config = new File("plugins/Stacker", "config.yml");
   private static FileConfiguration cfg;
 
@@ -80,10 +79,6 @@ public class loadConfig {
     }
   }
 
-  public static void readConfig() {
-    cfg = YamlConfiguration.loadConfiguration(config);
-  }
-
   public static String language() {
     if (cfg.isString("languageFile")) {
       return cfg.getString("languageFile");
@@ -91,26 +86,6 @@ public class loadConfig {
       cfg.set("languageFile", "en");
       saveConfig();
       return cfg.getString("languageFile");
-    }
-  }
-
-  public static Boolean autoUpdate() {
-    if (cfg.isBoolean("autoUpdate")) {
-      return cfg.getBoolean("autoUpdate");
-    } else {
-      cfg.set("autoUpdate", true);
-      saveConfig();
-      return cfg.getBoolean("autoUpdate");
-    }
-  }
-
-  public static String updateChannel() {
-    if (cfg.isString("updateChannel")) {
-      return cfg.getString("updateChannel");
-    } else {
-      cfg.set("updateChannel", "stable");
-      saveConfig();
-      return cfg.getString("updateChannel");
     }
   }
 
@@ -122,6 +97,20 @@ public class loadConfig {
       saveConfig();
       return cfg.getBoolean("autoUpdateLanguage");
     }
+  }
+
+  public static Boolean autoUpdate() {
+    if (cfg.isBoolean("autoUpdate")) {
+      return cfg.getBoolean("autoUpdate");
+    } else {
+      cfg.set("autoUpdate", false);
+      saveConfig();
+      return cfg.getBoolean("autoUpdate");
+    }
+  }
+
+  public static void readConfig() {
+    cfg = YamlConfiguration.loadConfiguration(config);
   }
 
   public static void saveConfig() {

@@ -78,7 +78,7 @@ jobs:
             paper
             purpur
           game-versions: |
-            >=1.11 <=1.20.6
+            >=1.11 <=1.21.8
           modrinth-id: Ffx1tA97
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           curseforge-id: 507466

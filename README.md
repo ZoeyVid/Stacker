@@ -35,11 +35,10 @@ This plugin works with the Minecraft versions 1.11-1.20
 
 This Minecraft versions a currently supported
 
-| Version       | Supported |
-| ------------- | --------- |
-| => 1.11.2     | ✅        |
-| = 1.11/1.11.1 | ❔        |
-| =< 1.10.2     | ❌        |
+| Version    | Supported |
+| ---------- | --------- |
+| 1.13 <=    | ✅        |
+| < 1.13     | ❌        |
 
 ## Reporting a Bug or suggest a feature
 

@@ -9,7 +9,7 @@ folia-supported: true
 
 commands:
   stacker:
-    description: a command to mange the Stacker plugin
+    description: a command to manage the Stacker plugin
 
 permissions:
   stacker.*:

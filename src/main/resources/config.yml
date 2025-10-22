@@ -10,7 +10,7 @@ defaultOn: true
 # Should a message be shown when a player a not stackable?
 showMessage: true
 #
-# Should a message be sent to the player when stackmode or immune is activated or deactivated for him by someone else?
+# Should a message be sent to the player when stackmode or immune is activated or deactivated for them by someone else?
 sendMessage: true
 #
 # Should the last state of player be saved until the next Server restart?

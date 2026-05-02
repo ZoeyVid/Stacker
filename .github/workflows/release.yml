@@ -18,10 +18,10 @@ jobs:
           distribution: corretto
       - name: Read .version file
         id: version
-        run: echo "version=$(cat .version)" >> $GITHUB_OUTPUT
+        run: echo "version=$(cat .github/.version)" >> $GITHUB_OUTPUT
       - name: Build with Maven
         run: |
-          sed -i "s|0.0.0|"$(cat .version)"|g" pom.xml
+          sed -i "s|0.0.0|"$(cat .github/.version)"|g" pom.xml
           mvn -B package
       - uses: actions/upload-artifact@v7.0.1
         with:

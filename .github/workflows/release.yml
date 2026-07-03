@@ -44,6 +44,7 @@ jobs:
             16
             17
             21
+            25
           loaders: |
             spigot
             paper

@@ -25,11 +25,10 @@ jobs:
           mvn -B package
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: artifacts
-          path: |
-            target/Stacker.jar
+          path: target/Stacker.jar
+          archive: false
+          if-no-files-found: error
       - uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659 # v3.3.0
-        if: github.ref_name == 'stable'
         with:
           version-type: release
           modrinth-featured: true

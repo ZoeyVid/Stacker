@@ -13,8 +13,7 @@ public class EntityDamageListener implements Listener {
   public void onEntityDamage(EntityDamageEvent event) {
     if (loadConfig.throwfalldamage()) return;
     if (!(event.getEntity() instanceof Player)) return;
-    Player player = (Player) event.getEntity();
-    if (main.getThrown().contains(player) && event.getCause() == DamageCause.FALL) {
+    if (event.getCause() == DamageCause.FALL && main.getThrown().contains(event.getEntity().getUniqueId())) {
       event.setCancelled(true);
     }
   }

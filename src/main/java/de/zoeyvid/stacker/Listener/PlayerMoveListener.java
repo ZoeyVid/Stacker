@@ -1,6 +1,7 @@
 package de.zoeyvid.stacker.Listener;
 
 import de.zoeyvid.stacker.main;
+import java.util.UUID;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -12,16 +13,14 @@ public class PlayerMoveListener implements Listener {
   @EventHandler
   public void onPlayerMove(PlayerMoveEvent event) {
     Player player = event.getPlayer();
-    if (main.getVelocity().containsKey(player)) {
-      player.setVelocity(main.getVelocity().get(player));
-      main.getThrown().add(player);
-      main.getVelocity().remove(player);
+    UUID id = player.getUniqueId();
+    if (main.getVelocity().containsKey(id)) {
+      player.setVelocity(main.getVelocity().get(id));
+      main.getThrown().add(id);
+      main.getVelocity().remove(id);
     }
-    if (main.getVelocity().containsKey(player) && player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() != Material.AIR && player.getFallDistance() == 0) {
-      main.getVelocity().remove(player);
-    }
-    if (main.getThrown().contains(player) && player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() != Material.AIR && player.getFallDistance() == 0) {
-      main.getThrown().remove(player);
+    if (main.getThrown().contains(id) && player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() != Material.AIR && player.getFallDistance() == 0) {
+      main.getThrown().remove(id);
     }
   }
 }

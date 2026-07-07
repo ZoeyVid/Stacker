@@ -14,17 +14,14 @@ public class PlayerInteractListener implements Listener {
   @EventHandler
   public void onEntityInteract(PlayerInteractEntityEvent event) {
     Player player = event.getPlayer();
-    if (event.getHand().equals(EquipmentSlot.HAND) && event.getRightClicked() instanceof Player && main.getStackmode().contains(player)) {
-      Player target = (Player) event.getRightClicked();
-      if (main.getDisabled().contains(target)) {
-        if (loadConfig.showMessage()) {
-          player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.dontStack().replace("%player%", target.getName()));
-        }
-      } else {
-        if (player.getWorld().getPlayers().contains(target)) {
-          player.addPassenger(target);
-        }
+    if (event.getHand() != EquipmentSlot.HAND || !(event.getRightClicked() instanceof Player) || !main.getStackmode().contains(player.getUniqueId())) return;
+    Player target = (Player) event.getRightClicked();
+    if (main.getDisabled().contains(target.getUniqueId())) {
+      if (loadConfig.showMessage()) {
+        player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.dontStack().replace("%player%", target.getName()));
       }
+    } else if (player.getWorld().getPlayers().contains(target)) {
+      player.addPassenger(target);
     }
   }
 }

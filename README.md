@@ -1,7 +1,7 @@
 # [Stacker](https://github.com/ZoeyVid/Stacker)
 
 A plugin to stack player above player (and throw them)! <br/>
-This plugin works with the Minecraft versions 1.13-1.21 <br/>
+This plugin works with the Minecraft versions 1.11.2-1.21 <br/>
 
 ## Commands & Permissions
 
@@ -40,8 +40,8 @@ This Minecraft versions are currently supported
 
 | Version    | Supported |
 | ---------- | --------- |
-| >= 1.13    | ✅        |
-| < 1.13     | ❌        |
+| >= 1.11.2  | ✅        |
+| < 1.11.2   | ❌        |
 
 ## Reporting bugs, suggesting features and getting help
 

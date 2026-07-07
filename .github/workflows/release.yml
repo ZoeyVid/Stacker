@@ -45,11 +45,13 @@ jobs:
             21
             25
           loaders: |
+            bukkit
             spigot
             paper
             purpur
+            folia
           game-versions: |
-            >=1.13
+            >=1.11.2
           modrinth-id: Ffx1tA97
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           curseforge-id: 507466

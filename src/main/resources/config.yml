@@ -31,5 +31,5 @@ languageFile: en
 # Should the plugin automatically update the Language File? (This will delete your custom changes)
 autoUpdateLanguage: true
 #
-# Should the plugin automatically update? the updated file will be saved to plugins/Stacker.jar
+# Should the plugin automatically download updates? The update is applied on the next server restart.
 autoUpdate: false

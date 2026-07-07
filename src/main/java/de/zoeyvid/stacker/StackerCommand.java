@@ -32,14 +32,14 @@ public class StackerCommand implements CommandExecutor, TabCompleter {
           if (target == null) {
             Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.DARK_RED + loadLanguage.errorPlayerOnline());
           } else {
-            if (main.getDisabled().contains(target)) {
-              main.getDisabled().remove(target);
+            if (main.getDisabled().contains(target.getUniqueId())) {
+              main.getDisabled().remove(target.getUniqueId());
               Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveImmuneOther().replace("%player%", target.getName()));
               if (loadConfig.sendMessage()) {
                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveImmuneSelf());
               }
             } else {
-              main.getDisabled().add(target);
+              main.getDisabled().add(target.getUniqueId());
               Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinImmuneOther().replace("%player%", target.getName()));
               if (loadConfig.sendMessage()) {
                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinImmuneSelf());
@@ -54,14 +54,14 @@ public class StackerCommand implements CommandExecutor, TabCompleter {
           if (target == null) {
             Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.DARK_RED + loadLanguage.errorPlayerOnline());
           } else {
-            if (main.getStackmode().contains(target)) {
-              main.getStackmode().remove(target);
+            if (main.getStackmode().contains(target.getUniqueId())) {
+              main.getStackmode().remove(target.getUniqueId());
               Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveStackmodeOther().replace("%player%", target.getName()));
               if (loadConfig.sendMessage()) {
                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveStackmodeSelf());
               }
             } else {
-              main.getStackmode().add(target);
+              main.getStackmode().add(target.getUniqueId());
               Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinStackmodeOther().replace("%player%", target.getName()));
               if (loadConfig.sendMessage()) {
                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinStackmodeSelf());
@@ -84,11 +84,11 @@ public class StackerCommand implements CommandExecutor, TabCompleter {
     if (args.length == 1) {
       if (args[0].equalsIgnoreCase("immune")) {
         if (sender.hasPermission("stacker.immune.self")) {
-          if (main.getDisabled().contains(player)) {
-            main.getDisabled().remove(player);
+          if (main.getDisabled().contains(player.getUniqueId())) {
+            main.getDisabled().remove(player.getUniqueId());
             player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveImmune());
           } else {
-            main.getDisabled().add(player);
+            main.getDisabled().add(player.getUniqueId());
             player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinImmune());
           }
         } else {
@@ -99,11 +99,11 @@ public class StackerCommand implements CommandExecutor, TabCompleter {
 
       if (args[0].equalsIgnoreCase("toggle")) {
         if (sender.hasPermission("stacker.use.self")) {
-          if (main.getStackmode().contains(player)) {
-            main.getStackmode().remove(player);
+          if (main.getStackmode().contains(player.getUniqueId())) {
+            main.getStackmode().remove(player.getUniqueId());
             player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveStackmode());
           } else {
-            main.getStackmode().add(player);
+            main.getStackmode().add(player.getUniqueId());
             player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinStackmode());
           }
         } else {
@@ -120,14 +120,14 @@ public class StackerCommand implements CommandExecutor, TabCompleter {
           if (target == null) {
             player.sendMessage(main.getPrefix() + ChatColor.DARK_RED + loadLanguage.errorPlayerOnline());
           } else {
-            if (main.getDisabled().contains(target)) {
-              main.getDisabled().remove(target);
+            if (main.getDisabled().contains(target.getUniqueId())) {
+              main.getDisabled().remove(target.getUniqueId());
               player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveImmuneOther().replace("%player%", target.getName()));
               if (loadConfig.sendMessage()) {
                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveImmuneSelf());
               }
             } else {
-              main.getDisabled().add(target);
+              main.getDisabled().add(target.getUniqueId());
               player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinImmuneOther().replace("%player%", target.getName()));
               if (loadConfig.sendMessage()) {
                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinImmuneSelf());
@@ -146,14 +146,14 @@ public class StackerCommand implements CommandExecutor, TabCompleter {
           if (target == null) {
             player.sendMessage(main.getPrefix() + ChatColor.DARK_RED + loadLanguage.errorPlayerOnline());
           } else {
-            if (main.getStackmode().contains(target)) {
-              main.getStackmode().remove(target);
+            if (main.getStackmode().contains(target.getUniqueId())) {
+              main.getStackmode().remove(target.getUniqueId());
               player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveStackmodeOther().replace("%player%", target.getName()));
               if (loadConfig.sendMessage()) {
                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.leaveStackmodeSelf());
               }
             } else {
-              main.getStackmode().add(target);
+              main.getStackmode().add(target.getUniqueId());
               player.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinStackmodeOther().replace("%player%", target.getName()));
               if (loadConfig.sendMessage()) {
                 target.sendMessage(main.getPrefix() + ChatColor.WHITE + loadLanguage.joinStackmodeSelf());

@@ -5,43 +5,41 @@ import java.io.File;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
 public final class main extends JavaPlugin {
   private static final String prefix = ChatColor.GRAY + "[" + ChatColor.AQUA + "Stacker" + ChatColor.GRAY + "] ";
-  private static final ArrayList<Player> stackmode = new ArrayList<>();
-  private static final ArrayList<Player> disabled = new ArrayList<>();
-  private static final ArrayList<Player> thrown = new ArrayList<>();
-  private static final HashMap<Player, Vector> velocity = new HashMap<>();
+  private static final Set<UUID> stackmode = ConcurrentHashMap.newKeySet();
+  private static final Set<UUID> disabled = ConcurrentHashMap.newKeySet();
+  private static final Set<UUID> thrown = ConcurrentHashMap.newKeySet();
+  private static final Map<UUID, Vector> velocity = new ConcurrentHashMap<>();
   private final int langVersion = 2;
-  private FileConfiguration cfg;
-  private FileConfiguration lang;
 
   public static String getPrefix() {
     return prefix;
   }
 
-  public static ArrayList<Player> getStackmode() {
+  public static Set<UUID> getStackmode() {
     return stackmode;
   }
 
-  public static ArrayList<Player> getDisabled() {
+  public static Set<UUID> getDisabled() {
     return disabled;
   }
 
-  public static ArrayList<Player> getThrown() {
+  public static Set<UUID> getThrown() {
     return thrown;
   }
 
-  public static HashMap<Player, Vector> getVelocity() {
+  public static Map<UUID, Vector> getVelocity() {
     return velocity;
   }
 
@@ -63,8 +61,8 @@ public final class main extends JavaPlugin {
     commandRegistration();
     listenerRegistration();
     loadLanguages();
-    updatePlugin();
     updateLanguage();
+    updatePlugin();
   }
 
   @Override
@@ -73,18 +71,14 @@ public final class main extends JavaPlugin {
   }
 
   private void loadConfig() {
-    File langDir = new File("plugins/Stacker");
-    if (!langDir.exists()) {
-      langDir.mkdirs();
+    File dir = new File("plugins/Stacker");
+    if (!dir.exists()) {
+      dir.mkdirs();
     }
     if ((new File("plugins/Stacker/config.yml")).exists()) {
-      cfg = getConfig();
-      cfg.options().copyDefaults(true);
       Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Config file loaded!");
     } else {
       saveDefaultConfig();
-      cfg = getConfig();
-      cfg.options().copyDefaults(true);
       Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Create and loaded config file!");
     }
     loadConfig.readConfig();
@@ -96,8 +90,6 @@ public final class main extends JavaPlugin {
       langDir.mkdirs();
     }
     if ((new File("plugins/Stacker/language/" + loadConfig.language() + ".yml")).exists()) {
-      lang = getConfig();
-      lang.options().copyDefaults(true);
       Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Language file loaded! (" + loadConfig.language() + ")");
     } else {
       try {
@@ -133,16 +125,20 @@ public final class main extends JavaPlugin {
   }
 
   private void updatePlugin() {
-    if (loadConfig.autoUpdate()) {
-      try {
-        Files.copy(new URI("https://github.com/ZoeyVid/Stacker/releases/latest/download/Stacker.jar").toURL().openStream(), new File("plugins/stacker.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
-      } catch (Exception e) {
-        Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while updating the plugin!");
-      }
+    if (!loadConfig.autoUpdate()) return;
+    try {
+      File updateFolder = Bukkit.getUpdateFolderFile();
+      updateFolder.mkdirs();
+      Files.copy(new URI("https://github.com/ZoeyVid/Stacker/releases/latest/download/Stacker.jar").toURL().openStream(), new File(updateFolder, getFile().getName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+      Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.WHITE + "Update downloaded, it will be applied on the next restart!");
+    } catch (Exception e) {
+      Bukkit.getConsoleSender().sendMessage(main.getPrefix() + ChatColor.RED + "Error while updating the plugin!");
     }
   }
 
   private void commandRegistration() {
-    getCommand("stacker").setExecutor(new StackerCommand());
+    StackerCommand stackerCommand = new StackerCommand();
+    getCommand("stacker").setExecutor(stackerCommand);
+    getCommand("stacker").setTabCompleter(stackerCommand);
   }
 }

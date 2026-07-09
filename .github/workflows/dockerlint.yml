@@ -1,0 +1,24 @@
+name: dockerlint
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+  workflow_dispatch:
+jobs:
+  dockerlint:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: dockerlint
+        run: |
+          set -x
+          curl -sSfL https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-$(uname -m) -o hadolint
+          chmod +x hadolint
+          for file in $(find -name "*Dockerfile"); do
+            # DL3018 warning: Pin versions in apk add. Instead of `apk add <package>` use `apk add <package>=<version>`
+            ./hadolint "$file" --ignore DL3018 | tee -a hadolint.log
+          done
+          if [ -n "$(cat hadolint.log)" ]; then
+            exit 1
+          fi

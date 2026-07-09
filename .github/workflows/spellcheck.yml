@@ -14,3 +14,4 @@ jobs:
         with:
           check_filenames: true
           check_hidden: true
+          skip: ./languages

@@ -1,33 +1,32 @@
-name: Release
+name: release
 on:
   push:
     branches:
-      - stable
+      - develop
     paths:
       - .version
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-      - name: Set up JDK 8
-        uses: actions/setup-java@0f481fcb613427c0f801b606911222b5b6f3083a # v5.5.0
+      - uses: actions/setup-java@0f481fcb613427c0f801b606911222b5b6f3083a # v5.5.0
         with:
           java-version: 8
           distribution: corretto
-      - name: Read .version file
-        id: version
-        run: echo "version=$(cat .version)" >> $GITHUB_OUTPUT
-      - name: Build with Maven
+      - name: version
         run: |
-          sed -i "s|0.0.0|"$(cat .version)"|g" pom.xml
-          mvn -B package
+          sed -i "s|0.0.0|"$(cat .version)"-dev|g" pom.xml
+          echo "version=$(cat .version)" >> $GITHUB_OUTPUT
+      - name: maven
+        run: mvn -B package
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           path: target/Stacker.jar
           archive: false
           if-no-files-found: error
+          retention-days: 3
       - uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659 # v3.3.0
         with:
           version-type: release

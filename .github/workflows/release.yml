@@ -29,6 +29,7 @@ jobs:
           if-no-files-found: error
           retention-days: 3
       - uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659 # v3.3.0
+        if: ${{ github.repository_owner == 'ZoeyVid' && github.event_name != 'pull_request' }}
         with:
           version-type: release
           modrinth-featured: true

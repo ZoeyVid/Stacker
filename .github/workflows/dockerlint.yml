@@ -19,6 +19,6 @@ jobs:
             # DL3018 warning: Pin versions in apk add. Instead of `apk add <package>` use `apk add <package>=<version>`
             ./hadolint "$file" --ignore DL3018 | tee -a hadolint.log
           done
-          if [ -n "$(cat hadolint.log)" ]; then
+          if [ -s hadolint.log ]; then
             exit 1
           fi

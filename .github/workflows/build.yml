@@ -15,7 +15,7 @@ jobs:
           java-version: 8
           distribution: corretto
       - name: version
-        run: sed -i "s|0.0.0|"$(cat .version)"-dev|g" pom.xml
+        run: sed -i "s|0.0.0|$(cat .version)-dev|g" pom.xml
       - name: maven
         run: mvn -B package
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1

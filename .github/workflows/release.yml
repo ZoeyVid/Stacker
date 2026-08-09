@@ -18,7 +18,7 @@ jobs:
       - name: version
         id: version
         run: |
-          sed -i "s|0.0.0|$(cat .version)-dev|g" pom.xml
+          sed -i "s|0.0.0|$(cat .version)|g" pom.xml
           echo "version=$(cat .version)" >> $GITHUB_OUTPUT
       - name: maven
         run: mvn -B package

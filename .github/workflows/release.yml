@@ -33,7 +33,7 @@ jobs:
           archive: false
           if-no-files-found: error
           retention-days: 3
-      - uses: Kir-Antipov/mc-publish@52307b03863581dec6b652b83e597aec02ebb075 # v3.3.1
+      - uses: Kir-Antipov/mc-publish@c23376546a97f5ba7984e94445da359459b14419 # v3.3.2
         if: ${{ github.repository_owner == 'ZoeyVid' && github.event_name != 'pull_request' }}
         with:
           version-type: release
